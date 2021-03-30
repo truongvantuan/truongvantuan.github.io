@@ -20,7 +20,7 @@
       <description>&lt;h1 id=&#34;bài-kiểm-tra-kết-thúc-module-java-core&#34;&gt;Bài kiểm tra kết thúc module Java Core&lt;/h1&gt;
 &lt;p&gt;Đề bài: Thiết kế ứng dụng ngân hàng mô phỏng các chức năng tạo tài khoản, nạp/rút tiền, tài khoản gửi/vay, tất toán khoản gửi/vay, &amp;hellip;&lt;/p&gt;
 &lt;p&gt;Diagram mô tả cấu trúc ứng dụng:
-&lt;img src=&#34;out/BankTransaction_Diagram/BankTransaction_Diagram.png&#34; alt=&#34;diagram&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;images/BankTransaction_Diagram.png&#34; alt=&#34;diagram&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;plugins---tools-sử-dụng&#34;&gt;Plugins - Tools sử dụng&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Maven : build và quản lý Dependency&lt;/li&gt;
