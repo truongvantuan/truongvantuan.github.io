@@ -1,0 +1,1274 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Trương Văn Tuấn" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Cách tiếp cận học tập của bạn sẽ quyết định sự thành công của bạn với Java. Dưới đây là những sai lầm phổ biến nhất mà các lập trình viên mắc phải khi mắt đầu hành trình học Java của họ." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://truongvantuan.github.io/post/start-java-programming-like-a-pro/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.9a66e344a68eb664b392d406a3f80726.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://truongvantuan.github.io/post/start-java-programming-like-a-pro/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Academic" />
+  <meta property="og:url" content="https://truongvantuan.github.io/post/start-java-programming-like-a-pro/" />
+  <meta property="og:title" content="Bắt đầu lập trình Java như một chuyên gia - Kế hoạch tốt nhất của bạn để tránh sai lầm khi học | Academic" />
+  <meta property="og:description" content="Cách tiếp cận học tập của bạn sẽ quyết định sự thành công của bạn với Java. Dưới đây là những sai lầm phổ biến nhất mà các lập trình viên mắc phải khi mắt đầu hành trình học Java của họ." /><meta property="og:image" content="https://truongvantuan.github.io/post/start-java-programming-like-a-pro/featured.jpg" />
+    <meta property="twitter:image" content="https://truongvantuan.github.io/post/start-java-programming-like-a-pro/featured.jpg" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-03-30T16:54:30&#43;07:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-03-30T16:54:30&#43;07:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://truongvantuan.github.io/post/start-java-programming-like-a-pro/"
+  },
+  "headline": "Bắt đầu lập trình Java như một chuyên gia - Kế hoạch tốt nhất của bạn để tránh sai lầm khi học",
+  
+  "image": [
+    "https://truongvantuan.github.io/post/start-java-programming-like-a-pro/featured.jpg"
+  ],
+  
+  "datePublished": "2021-03-30T16:54:30+07:00",
+  "dateModified": "2021-03-30T16:54:30+07:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Trương Văn Tuấn"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Academic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://truongvantuan.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Cách tiếp cận học tập của bạn sẽ quyết định sự thành công của bạn với Java. Dưới đây là những sai lầm phổ biến nhất mà các lập trình viên mắc phải khi mắt đầu hành trình học Java của họ."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Bắt đầu lập trình Java như một chuyên gia - Kế hoạch tốt nhất của bạn để tránh sai lầm khi học | Academic</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="417bd082a64f60a292c6336750e8c13d" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.70da8dc684e3291a2f33bdac07bf3cd3.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Academic</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Academic</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#talks"><span>Talks</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>Bắt đầu lập trình Java như một chuyên gia - Kế hoạch tốt nhất của bạn để tránh sai lầm khi học</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      Trương Văn Tuấn</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Mar 30, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 476px;">
+  <div style="position: relative">
+    <img src="/post/start-java-programming-like-a-pro/featured_huf34b31b5cd16a4dbfd3fe07387a1cd28_59308_720x0_resize_q75_lanczos.jpg" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <blockquote>
+<p>Bài viết gốc: Start Java Programming Like a Pro - Your Best Plan to Avoid Mistakes in Learning by Eva Chase</p>
+</blockquote>
+<p>Bạn phát hiện ra Java và quyết định trau dồi kỹ năng cho ngôn ngữ lập trình cực kỳ phổ biến và có nhu cầu việc làm cao. Xin chúc mừng, bạn đã thực hiện bước đầu tiên để trờ thành một chuyên gia Java.</p>
+<p>Tuy nhiên trở thành một nhà phát triển Java hàng đầu có nghĩa là tránh những sai lầm gây tốn kém thời gian, tiền bạc và quan trọng nhất là uy tín của bạn. Tất cả những điều này bắt đầu từ cách bạn học tập.</p>
+<p>Dưới đây là những sai lầm phổ biến nhất mà các lập trình viên mắc phải khi mắt đầu hành trình học Java  của họ.</p>
+<h2 id="1-lý-thuyết-quá-nhiều-thực-hành-quá-ít">1. Lý thuyết quá nhiều. Thực hành quá ít.</h2>
+<p>Đọc sách và xem video hướng dẫn luôn là một phần cần thiết trong quá trình học Java của bạn. Nhưng hãy cẩn thận đừng lạm dụng nó. Giống như học cách bơi, cách lái xe hay cách chơi một nhạc cụ, lập trình Java là một kỹ năng thực tết, bạn cần thực hành làm nhiều để có hiểu quả tốt nhất. Trong khi học thụ động có vẻ dễ dàng hơn, nhưng bạn chỉ đơn giản là sẽ không nhớ toàn bộ kiến thức giá trị của cuốn sách sau lần đọc đầu tiên. Thay vào đó, hãy tìm cách liên tục áp dụng điều bạn học và nó sẽ tốt hơn rất nhiều.</p>
+<h2 id="2-học-không-có-mục-tiêu">2. Học không có mục tiêu</h2>
+<p>Một số người thích học chỉ đơn giản là vì lợi ích của việc học. Tuy nhiên cách tiếp cận này không phù hợp với định hướng nghề nghiệp. Thay vào đó hãy dành thời gian xem xét lại mục đích cuối cùng mà bạn muốn khi học Java. Xem xét các tin tuyển dụng, đặc biệt các yêu cầu kỹ thuật từ họ. Tiếp theo hãy đặt cho mình những mục tiêu học tập nhỏ, những mục tiêu này sẽ giúp bạn duy trì sự tập trung, mang lại cho bạn cảm giác có thành tựu khi tiến bộ và cũng giúp bạn có thêm động lực.</p>
+<h2 id="3-không-kiểm-tra-code-của-bạn">3. Không kiểm tra code của bạn</h2>
+<p>Lỗi lập trình sẽ mắc phải. Nhưng đừng đợi đến khi bạn viết mã xong mới cố gắng tìm hiểu xem có chuyện gì xẩy ra - có thể có nhiều điều bạn nhận ra. Con người chúng ta học tốt nhất theo từng bước nhỏ hơn là tất cả cùng một lúc. Do đó, bằng cách kiểm tra code của bạn thường xuyên, bạn sẽ học Java nhanh hơn và có thói quen viết code tốt.</p>
+<h2 id="4-học-quá-nhiều-công-nghệ-cùng-một-lúc">4. Học quá nhiều công nghệ cùng một lúc</h2>
+<p>Với một loạt các công cụ và công nghệ phát triển phần mềm phức tạp trên thị trường, nó rất dễ bị phân tâm và choáng ngợp. Tuy nhiên, điều quan trọng là phải bám sát các mục tiêu học Java đã định của bạn, tập trung vào các nguyên tắc cơ bản, và tạo một kế hoạch học tập phù hợp để lên lịch học Java của bạn. Một cách tuyệt vời để đạt được tất cả những điều này là thông qua đăng ký học Oracle Java Core, cung cấp quyền truy cập 24/7 để học tập từng bước về các khái niệm cốt lõi, cấu trúc ngôn ngữ và kiểu dữ liệu - và nơi bạn sẽ học các phương pháp hay nhất từ ​các chuyên gia ​Java.</p>
+<h2 id="5-ngắt-quãng-quá-lâu-trong-quá-trình-học-của-bạn">5. Ngắt quãng quá lâu trong quá trình học của bạn</h2>
+<p>Điều quan trọng là bạn phải có thói quen học tập hàng ngày và điều này đặc biệt đúng khi bắt đầu hành trình Java của bạn. Nếu bạn để quá lâu giữa các buổi học, bạn sẽ dễ quên tài liệu mà bạn có thể cần tham khảo sau này. Học tập (và thực hành) mỗi ngày giúp kiến ​​thức hiện có luôn mới trong tâm trí bạn, do đó giúp bạn học thêm dễ dàng và nhanh chóng hơn.</p>
+<h2 id="6-học-một-mình">6. Học một mình</h2>
+<p>Học hỏi cùng và từ người khác có rất nhiều lợi ích, từ cải thiện kỹ năng giao tiếp và làm việc nhóm đến phát triển mối quan hệ nghề nghiệp của bạn - tất cả điều này đều cả thiện đáng kể triển vọng việc làm của bạn trong tương lai. Ví dụ, hãy tiếp cận với Cộng đồng Oracle Java, cộng đồng có hàng triệu thành viên và có vô số cách để giúp bạn trong quá trình học tập của mình.</p>
+<h2 id="7-quên-phát-triển-các-kỹ-năng-bổ-trợ">7. Quên phát triển các kỹ năng bổ trợ</h2>
+<p>Sở hữu nhiều kiến thức Java chắc chắn là điều không thiếu để trở thành chuyên lập trình viên Java hàng đầu. Tuy nhiên đừng quên phát triển các kỹ năng mà nhà tuyển dụng luôn tìm kiếm - chẳng hạn như khả năng giải quyết vấn đề, tư duy trừu tượng, động lực bản thân, và đặc biệt các nhà phát triển cấp cao, khả năng giao tiếp tốt.</p>
+<h2 id="8-bị-sa-lầy-vào-một-chủ-đề-học-tập">8. Bị sa lầy vào một chủ đề học tập</h2>
+<p>Dành quá nhiều thời gian cho một chủ đề Java duy nhất mà bạn gặp khó khăn trong việc nắm bắt có thể phản tác dụng. Hãy nhớ rằng không ai có thể biết mọi thứ về Java. Thời gian học tập của bạn là có giá trị, vì vậy nếu bạn đang thực sự gặp khó khăn về vấn đề nào đó hãy chuyển qua chủ đề khác và quay lại nó sau.</p>
+<h2 id="9-không-làm-cho-code-của-bạn-dễ-đọc">9. Không làm cho code của bạn dễ đọc</h2>
+<p>Có phải thi thoảng bạn gặp vấn đề khi đọc chữ viết tay của mình? Tất cả chúng ta đều thế: Bạn viết vội các ghi chú và sau đó nhận thấy rằng bạn không thể hiểu được những gì bạn đã viết. Điều này cũng có thể đúng khi viết mã. Dành thời gian và nỗ lực để viết code tốt, cạch và dễ đọc. Hãy nhớ rằng phần lớn các lập trình viên làm việc theo nhóm và bạn không muốn trở thành &ldquo;một người&rdquo; có code luôn khó hiểu.</p>
+<h2 id="10-không-xác-nhận-việc-học-của-bạn">10. Không xác nhận việc học của bạn</h2>
+<p>Các kỹ năng Java mới học của bạn sẽ không được đánh giá cao nếu bạn không làm nổi bật chúng với nhà tuyển dụng tiềm năng. Cách tối ưu để làm điều này là có được công nhận, chứng chỉ, &hellip; ví dụ: thông qua chứng chỉ Java SE 11 Developer 2019. Theo đuổi chứng chỉ không chỉ là con đường thực hành tốt nhất để học Java, nó còn là một bổ sung cực kỳ có giá trị để nâng cao trình độ của bạn hoặc hỗ trợ bạn trong quá trình tìm kiếm việc làm - đặc biệt nếu bạn chưa có nhiều năm kinh nghiệm lập trình.</p>
+<p>Nhìn chung, cách tiếp cận học tập của bạn sẽ quyết định sự thành công của bạn với Java.</p>
+<p>Tối ưu hóa cơ hội của bạn để trở thành một chuyên gia Java thực sự bằng cách tránh những lỗi học tập phổ biến nhất, học hỏi từ và được chứng nhận bởi các chuyên gia Java của Oracle.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://truongvantuan.github.io/post/start-java-programming-like-a-pro/&amp;text=B%e1%ba%aft%20%c4%91%e1%ba%a7u%20l%e1%ba%adp%20tr%c3%acnh%20Java%20nh%c6%b0%20m%e1%bb%99t%20chuy%c3%aan%20gia%20-%20K%e1%ba%bf%20ho%e1%ba%a1ch%20t%e1%bb%91t%20nh%e1%ba%a5t%20c%e1%bb%a7a%20b%e1%ba%a1n%20%c4%91%e1%bb%83%20tr%c3%a1nh%20sai%20l%e1%ba%a7m%20khi%20h%e1%bb%8dc" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://truongvantuan.github.io/post/start-java-programming-like-a-pro/&amp;t=B%e1%ba%aft%20%c4%91%e1%ba%a7u%20l%e1%ba%adp%20tr%c3%acnh%20Java%20nh%c6%b0%20m%e1%bb%99t%20chuy%c3%aan%20gia%20-%20K%e1%ba%bf%20ho%e1%ba%a1ch%20t%e1%bb%91t%20nh%e1%ba%a5t%20c%e1%bb%a7a%20b%e1%ba%a1n%20%c4%91%e1%bb%83%20tr%c3%a1nh%20sai%20l%e1%ba%a7m%20khi%20h%e1%bb%8dc" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=B%e1%ba%aft%20%c4%91%e1%ba%a7u%20l%e1%ba%adp%20tr%c3%acnh%20Java%20nh%c6%b0%20m%e1%bb%99t%20chuy%c3%aan%20gia%20-%20K%e1%ba%bf%20ho%e1%ba%a1ch%20t%e1%bb%91t%20nh%e1%ba%a5t%20c%e1%bb%a7a%20b%e1%ba%a1n%20%c4%91%e1%bb%83%20tr%c3%a1nh%20sai%20l%e1%ba%a7m%20khi%20h%e1%bb%8dc&amp;body=https://truongvantuan.github.io/post/start-java-programming-like-a-pro/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://truongvantuan.github.io/post/start-java-programming-like-a-pro/&amp;title=B%e1%ba%aft%20%c4%91%e1%ba%a7u%20l%e1%ba%adp%20tr%c3%acnh%20Java%20nh%c6%b0%20m%e1%bb%99t%20chuy%c3%aan%20gia%20-%20K%e1%ba%bf%20ho%e1%ba%a1ch%20t%e1%bb%91t%20nh%e1%ba%a5t%20c%e1%bb%a7a%20b%e1%ba%a1n%20%c4%91%e1%bb%83%20tr%c3%a1nh%20sai%20l%e1%ba%a7m%20khi%20h%e1%bb%8dc" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=B%e1%ba%aft%20%c4%91%e1%ba%a7u%20l%e1%ba%adp%20tr%c3%acnh%20Java%20nh%c6%b0%20m%e1%bb%99t%20chuy%c3%aan%20gia%20-%20K%e1%ba%bf%20ho%e1%ba%a1ch%20t%e1%bb%91t%20nh%e1%ba%a5t%20c%e1%bb%a7a%20b%e1%ba%a1n%20%c4%91%e1%bb%83%20tr%c3%a1nh%20sai%20l%e1%ba%a7m%20khi%20h%e1%bb%8dc%20https://truongvantuan.github.io/post/start-java-programming-like-a-pro/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://truongvantuan.github.io/post/start-java-programming-like-a-pro/&amp;title=B%e1%ba%aft%20%c4%91%e1%ba%a7u%20l%e1%ba%adp%20tr%c3%acnh%20Java%20nh%c6%b0%20m%e1%bb%99t%20chuy%c3%aan%20gia%20-%20K%e1%ba%bf%20ho%e1%ba%a1ch%20t%e1%bb%91t%20nh%e1%ba%a5t%20c%e1%bb%a7a%20b%e1%ba%a1n%20%c4%91%e1%bb%83%20tr%c3%a1nh%20sai%20l%e1%ba%a7m%20khi%20h%e1%bb%8dc" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://truongvantuan.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu8ac9b83a883fc34a4493b391f18cf895_20470_270x270_fill_q75_lanczos_center.jpg" alt="Trương Văn Tuấn"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://truongvantuan.github.io/">Trương Văn Tuấn</a></h5>
+      <h6 class="card-subtitle">Java Web Developer</h6>
+      <p class="card-text">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/truongvantuanbk" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/truongvantuan" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/tuantruongvan/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.352b57649c56fe4a399dd60c20b7407e.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>
