@@ -18,12 +18,42 @@
   </url>
   
   <url>
-    <loc>https://truongvantuan.github.io/project/atm-banking-javacore/</loc>
-    <lastmod>2021-03-30T17:11:50+07:00</lastmod>
+    <loc>https://truongvantuan.github.io/categories/</loc>
+    <lastmod>2021-03-30T18:02:29+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truongvantuan.github.io/tag/java-core/</loc>
+    <lastmod>2021-03-30T18:02:29+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truongvantuan.github.io/category/java-core/</loc>
+    <lastmod>2021-03-30T18:02:29+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truongvantuan.github.io/project/java-programing-ii-submit/</loc>
+    <lastmod>2021-03-30T18:02:29+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://truongvantuan.github.io/project/</loc>
+    <lastmod>2021-03-30T18:02:29+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truongvantuan.github.io/tags/</loc>
+    <lastmod>2021-03-30T18:02:29+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truongvantuan.github.io/project/java-programing-i-submit/</loc>
+    <lastmod>2021-03-30T17:53:44+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truongvantuan.github.io/project/atm-banking-javacore/</loc>
     <lastmod>2021-03-30T17:11:50+07:00</lastmod>
   </url>
   
@@ -58,21 +88,6 @@
   </url>
   
   <url>
-    <loc>https://truongvantuan.github.io/tag/deep-learning/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://truongvantuan.github.io/project/example/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://truongvantuan.github.io/tags/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://truongvantuan.github.io/publication-type/1/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
@@ -99,10 +114,6 @@
   
   <url>
     <loc>https://truongvantuan.github.io/admin/</loc>
-  </url>
-  
-  <url>
-    <loc>https://truongvantuan.github.io/categories/</loc>
   </url>
   
 </urlset>
