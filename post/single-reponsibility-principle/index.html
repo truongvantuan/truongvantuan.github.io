@@ -1,0 +1,1283 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Trương Văn Tuấn" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Bài viết gốc: The Single Responsibility Principle by Robert C. Martin (Uncle Bob)
+ Vào năm 1972, David L. Parnas đã xuất bản một bài viết có tựa đề On the Criteria To Be Used in Decomposing Systems into Modules." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://truongvantuan.github.io/post/single-reponsibility-principle/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.9a66e344a68eb664b392d406a3f80726.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://truongvantuan.github.io/post/single-reponsibility-principle/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Academic" />
+  <meta property="og:url" content="https://truongvantuan.github.io/post/single-reponsibility-principle/" />
+  <meta property="og:title" content="Nguyên tắc Nhiệm Vụ Đơn Lẻ | Academic" />
+  <meta property="og:description" content="Bài viết gốc: The Single Responsibility Principle by Robert C. Martin (Uncle Bob)
+ Vào năm 1972, David L. Parnas đã xuất bản một bài viết có tựa đề On the Criteria To Be Used in Decomposing Systems into Modules." /><meta property="og:image" content="https://truongvantuan.github.io/post/single-reponsibility-principle/featured.jpg" />
+    <meta property="twitter:image" content="https://truongvantuan.github.io/post/single-reponsibility-principle/featured.jpg" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-03-30T18:16:22&#43;07:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-03-30T18:16:22&#43;07:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://truongvantuan.github.io/post/single-reponsibility-principle/"
+  },
+  "headline": "Nguyên tắc Nhiệm Vụ Đơn Lẻ",
+  
+  "image": [
+    "https://truongvantuan.github.io/post/single-reponsibility-principle/featured.jpg"
+  ],
+  
+  "datePublished": "2021-03-30T18:16:22+07:00",
+  "dateModified": "2021-03-30T18:16:22+07:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Trương Văn Tuấn"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Academic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://truongvantuan.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Bài viết gốc: The Single Responsibility Principle by Robert C. Martin (Uncle Bob)\n Vào năm 1972, David L. Parnas đã xuất bản một bài viết có tựa đề On the Criteria To Be Used in Decomposing Systems into Modules."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Nguyên tắc Nhiệm Vụ Đơn Lẻ | Academic</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="fc682a517afdfaaf7de2dbb252268e94" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.70da8dc684e3291a2f33bdac07bf3cd3.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Academic</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Academic</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#talks"><span>Talks</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>Nguyên tắc Nhiệm Vụ Đơn Lẻ</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Mar 30, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 405px;">
+  <div style="position: relative">
+    <img src="/post/single-reponsibility-principle/featured_hu84e6d16fd3ba1332008c8863b6036de5_41990_720x0_resize_q75_lanczos.jpg" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <blockquote>
+<p>Bài viết gốc: <a href="https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html" target="_blank" rel="noopener">The Single Responsibility Principle</a> by Robert C. Martin (Uncle Bob)</p>
+</blockquote>
+<p>Vào năm 1972, David L. Parnas đã xuất bản một bài viết có tựa đề On the Criteria To Be Used in Decomposing Systems into Modules. Trong bài viết này, Parnas đã so sánh hai chiến lược khác nhau để chia nhỏ và tách logic trong một thuật toán đơn giản. Bài viết rất hấp dẫn và tôi rất mong bạn xem qua nó. Một phần kết luận của ông như sau:</p>
+<blockquote>
+<p>Chúng tôi đã cố gắng chứng minh bằng những ví dụ này rằng hầu như luôn luôn sai khi bắt đầu phân chia hệ thống &gt;thành các mô-đun trên cơ sở sơ đồ (flowchart). Thay vào đó, chúng tôi đề xuất bắt đầu bằng một danh sách các &gt;quyết định thiết kế khó khăn hoặc các quyết định thiết kế có khả năng thay đổi. Mỗi mô-đun sau đó được thiết kế &gt;để ẩn một quyết định như vậy với các mô-đun khác.</p>
+</blockquote>
+<p>Tôi đã thêm phần nhấn mạnh trong câu thứ hai đến câu cuối cùng. Kết luận của Parnas là các mô-đun nên được tách biệt, theo nhiệm vụ mà chúng đảm nhiệm.</p>
+<blockquote>
+<p>Hai năm sau, Edsger Dijkstra viết một bài báo kinh điển khác có tựa đề On the role of scientific thought ( tạm &gt;dịch Về vai trò của tư tưởng khoa học). Trong đó ông đưa ra thuật ngữ: The Separation of Concerns (tạm dịch Sự &gt;tách biệt của các mối quan tâm).</p>
+</blockquote>
+<p>Những năm 1970 và 1980 là thời kỳ thịnh vượng cho các nguyên tắc của kiến ​​trúc phần mềm.  Structured Programming and Design là tiêu biểu hơn cả. Trong thời gian đó, khái niệm về Coupling and Cohesion đã được giới thiệu bởi Larry Constantine, và được củng cố thêm bởi Tom DeMarco, Meilir Page-Jones và nhiều người khác.</p>
+<p>Vào cuối những năm 1990, tôi đã cố gắng củng cố những quan niệm này thành một nguyên tắc, mà tôi gọi là: The Single Responsibility Principle (tạm dịch Nguyên tắc nhiệm vụ đơn lẻ) .(Tôi có cảm giác ngờ ngợ rằng tôi đã đánh cắp tên của nguyên tắc này từ Bertrand Meyer, nhưng tôi không thể xác nhận điều đó.)</p>
+<p>Nguyên tắc Nhiệm vụ Đơn lẻ (SRP) nêu rõ rằng mỗi mô-đun phần mềm nên có một và chỉ một lý do để thay đổi. Điều này nghe có vẻ hay và phù hợp với công thức của Parnas. Tuy nhiên nó đặt ra câu hỏi: Điều gì xác định lý do để thay đổi?</p>
+<p>Một số người đã tự hỏi liệu một bản vá lỗi có đủ điều kiện làm lý do để thay đổi. Những người khác đã tự hỏi việc tái cấu trúc có phải là lý do để thay đổi hay không. Những câu hỏi này có thể được trả lời bằng cách chỉ ra sự kết hợp giữa thuật ngữ “lý do để thay đổi” và “nhiệm vụ”.</p>
+<p>Chắc chắn code không chịu trách nhiệm sửa lỗi, tái cấu trúc. Những điều đó là nhiệm vụ của lập trình viên, không phải của chương trình.</p>
+<p>Nhưng nếu đúng như vậy thì chương trình phải chịu trách nhiệm gì? Hoặc có lẽ, một câu hỏi hay hơn là: Chương trình chịu trách nhiệm cho ai? Hay hơn nữa: Thiết kế của chương trình phản hồi cho ai?</p>
+<p>Hãy tưởng tượng về một tổ chức doanh nghiệp điển hình. CEO (giám đốc điều hành) là người đứng đầu. Báo cáo lên vị CEO này là các giám đốc điều hành cấp C: họ là CFO (giám đốc tài chính), COO (giám đốc phụ trách điều hành) và CTO (giám đốc công nghệ). CFO chịu trách nhiệm giám sát tài chính của công ty. COO chịu trách nhiệm quản lý các hoạt động của công ty. Và CTO chịu trách nhiệm về cơ sở hạ tầng và phát triển công nghệ trong công ty.</p>
+<p>Bây giờ hẫy xem xét Java code sau:</p>
+<pre><code class="language-java">public class Employee {
+  public Money calculatePay();
+  public void save();
+  public String reportHours();
+}
+</code></pre>
+<ul>
+<li>Phương thức calculatePay() triển khai các thuật toán xác định bao nhiêu nhân viên cụ thể sẽ được thanh toán, dựa trên hợp đồng, trạng thái, số giờ làm việc, &hellip;</li>
+<li>Phương thức save() lưu trữ dữ liệu được quản lý bởi Employee object vào cơ sở dữ liệu doanh nghiệp.</li>
+<li>Phương thức reportHours() trả về một chuỗi, chuỗi này được dùng trong báo cáo mà kiểm toán viên sử dụng để đảm bảo nhân viên đang làm việc trong số giờ thích hợp và được trả lương thích hợp.</li>
+</ul>
+<p>Bây giờ, giám đốc điều hành cấp độ C nào chịu trách nhiệm cho các hành vi của phương thức calculatePay()? Ai trong số họ sẽ bị sa thải[1] nếu phương thức đó thực hiện các hành vi sai nghiêm trọng? Rõ ràng câu trả lời là CFO. Nếu tất cả các nhân viên được trả lương gấp đôi trong một năm vì ai đó trong bộ phận quản lý tài chính quy định sai các quy tắc tính lương, giám đốc tài chính có thể bị sa thải.</p>
+<p>Một giám đốc khác chịu trách nhiệm chỉ định định dạng và nội dung của chuỗi trả về từ phương thức reportHours(). Vị giám đốc đó quản lý các kiểm soát viên. Vì vậy nếu có sai sót nghiêm trọng trong báo cáo, COO sẽ bị sa thải.</p>
+<p>Và cuối cùng tương tự là CTO sẽ chịu trách nhiệm trong sai sót liên quan đến dữ liệu doanh nghiệp.</p>
+<p>Và đây là điểm mấu chốt của nguyên tắc Nhiệm Vụ Đơn Lẻ. Nguyên tắc này là về con người.</p>
+<p>Khi bạn viết một mô-đun phần mềm, bạn muốn đảm bảo rằng khi các thay đổi được yêu cầu, những thay đổi chỉ có thể bắt nguồi từ một người duy nhất, hay đúng hơn, một nhóm người kiên kết chặt chẽ đại diện cho một chức năng doanh nghiệp được xác định rõ ràng. Bạn muốn tách biệt mô-đun của mình khỏi sự phức tạp của tổ chức nói chung, và thiết kế hệ thống của bạn sao cho mỗi mô-đun chịu trách nhiệm (đáp ứng) các yêu cầu chỉ cho chức năng nghiệp vụ đó.</p>
+<p>Tại sao? Bởi vì chúng tôi không muốn COO bị sa thải vì chúng tôi đã thực hiện thay đổi do CTO yêu cầu.</p>
+<p>Không gì làm khách hàng và quản lý của chúng tôi kinh hoảng hơn khi phát hiện chương trình bị trục trặc theo cách, mà theo quan điểm của họ là hoàn toàn không liên quan đến những thay đổi mà họ yêu cầu. Nếu bạn thay đổi phương thức calculatePay() và vô tình làm hỏng phương thức reportHours(), thì COO sẽ bắt đầu yêu cầu bạn không bao giờ thay đổi phương thức calculatePay() thêm lần nào nữa.</p>
+<p>Thử tưởng tượng bạn mang xe đến thợ cơ khí để sửa cửa sổ điện bị hỏng. Anh ấy gọi bạn vào ngày hôm sau và bảo mọi thứ đã được khắc phục. Khi bạn nhận xe, cửa sổ hoạt động tốt nhưng xe không nổ máy. Thật khó để bạn quay lại với người thợ đó với những gì anh ta đã làm.</p>
+<p>Đó là cảm nhận của khách hàng và quản lý khi chúng tôi làm hỏng những thứ họ quan tâm mà họ đã không yêu cầu chúng tôi thay đổi.</p>
+<p>Đây là lý do chúng tôi không đưa SQL vào JSPs. Đây là lý do chúng tôi không viết mã HTML trong các mô-đun tính toán kết quả. Đây là lý do mà các quy tắc nghiệp vụ không nên biết về cấu trúc database. Đây là lý do chúng tôi tách biệt các mối quan tâm.</p>
+<p>Một cách diễn đạt khác cho nguyên tắc Nhiệm Vụ Đơn Lẻ:</p>
+<blockquote>
+<p>Tập hợp lại những điều thay đổi vì những lý do giống nhau. Tách những thứ thay đổi vì lý do khác nhau.</p>
+</blockquote>
+<p>Nếu bạn nghĩ về điều này, bạn sẽ nhận ra rằng đây chỉ là một cách khác để xác định sự gắn kết và khớp nối. Chúng tôi muốn tăng sự gắn kết giữa những thứ thay đổi vì những lý do giống nhau và giảm sự gắn kết giữ những thứ thay đổi vì lý do khác nhau.</p>
+<p>Tuy nhiên khi bạn nghĩ về nguyên tắc này, hãy nhớ rằng lý do thay đổi là do con người. Đó là những người yêu cầu thay đổi.Và bạn không muốn gây nhầm lẫn cho những người đó hoặc chính mình bằng cách trộn lẫn code mà nhiều khác quan tâm vì những lý do khác nhau.</p>
+<p>[1] Tôi thích một chút cường điệu ở đây. Các giám đốc điều hành cấp C thường không bị sa thải vì các thông số kỹ thuật sai nhỏ. Tuy nhiên, nó không nằm ngoài khả năng xảy ra và nó nhấn mạnh rằng các tổ chức báo cáo với các giám đốc điều hành này quan tâm đến các mối quan tâm khác nhau.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://truongvantuan.github.io/post/single-reponsibility-principle/&amp;text=Nguy%c3%aan%20t%e1%ba%afc%20Nhi%e1%bb%87m%20V%e1%bb%a5%20%c4%90%c6%a1n%20L%e1%ba%bb" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://truongvantuan.github.io/post/single-reponsibility-principle/&amp;t=Nguy%c3%aan%20t%e1%ba%afc%20Nhi%e1%bb%87m%20V%e1%bb%a5%20%c4%90%c6%a1n%20L%e1%ba%bb" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Nguy%c3%aan%20t%e1%ba%afc%20Nhi%e1%bb%87m%20V%e1%bb%a5%20%c4%90%c6%a1n%20L%e1%ba%bb&amp;body=https://truongvantuan.github.io/post/single-reponsibility-principle/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://truongvantuan.github.io/post/single-reponsibility-principle/&amp;title=Nguy%c3%aan%20t%e1%ba%afc%20Nhi%e1%bb%87m%20V%e1%bb%a5%20%c4%90%c6%a1n%20L%e1%ba%bb" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Nguy%c3%aan%20t%e1%ba%afc%20Nhi%e1%bb%87m%20V%e1%bb%a5%20%c4%90%c6%a1n%20L%e1%ba%bb%20https://truongvantuan.github.io/post/single-reponsibility-principle/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://truongvantuan.github.io/post/single-reponsibility-principle/&amp;title=Nguy%c3%aan%20t%e1%ba%afc%20Nhi%e1%bb%87m%20V%e1%bb%a5%20%c4%90%c6%a1n%20L%e1%ba%bb" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://truongvantuan.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu8ac9b83a883fc34a4493b391f18cf895_20470_270x270_fill_q75_lanczos_center.jpg" alt="Trương Văn Tuấn"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://truongvantuan.github.io/">Trương Văn Tuấn</a></h5>
+      <h6 class="card-subtitle">Java Web Developer</h6>
+      <p class="card-text">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/truongvantuanbk" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/truongvantuan" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/tuantruongvan/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.352b57649c56fe4a399dd60c20b7407e.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>
