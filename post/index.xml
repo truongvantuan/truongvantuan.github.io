@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts | Trương Tuấn</title>
+    <title>Bài viết | Trương Tuấn</title>
     <link>https://truongvantuan.github.io/post/</link>
       <atom:link href="https://truongvantuan.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    <description>Posts</description>
+    <description>Bài viết</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>vi-vn</language><copyright>© 2021 TRUONG TUAN</copyright><lastBuildDate>Tue, 30 Mar 2021 18:16:22 +0700</lastBuildDate>
     <image>
       <url>https://truongvantuan.github.io/media/icon_hu3ca13aa75a58dd23742bac0bd9a006b0_16703_512x512_fill_lanczos_center_2.png</url>
-      <title>Posts</title>
+      <title>Bài viết</title>
       <link>https://truongvantuan.github.io/post/</link>
     </image>
     
