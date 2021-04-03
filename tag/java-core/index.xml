@@ -46,6 +46,7 @@
       <guid>https://truongvantuan.github.io/project/atm-banking-javacore/</guid>
       <description>&lt;h1 id=&#34;bài-kiểm-tra-kết-thúc-module-java-core&#34;&gt;Bài kiểm tra kết thúc module Java Core&lt;/h1&gt;
 &lt;p&gt;Đề bài: Thiết kế ứng dụng ngân hàng mô phỏng các chức năng tạo tài khoản, nạp/rút tiền, tài khoản gửi/vay, tất toán khoản gửi/vay, &amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/main.png&#34; alt=&#34;Main Menu&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Diagram mô tả cấu trúc ứng dụng:
 &lt;img src=&#34;images/BankTransaction_Diagram.png&#34; alt=&#34;diagram&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;plugins---tools-sử-dụng&#34;&gt;Plugins - Tools sử dụng&lt;/h1&gt;
@@ -83,7 +84,8 @@ mvn compiler:compile
 &lt;li&gt;Mở tài khoản tiết kiệm&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Mỗi tài khoản có thể mở nhiều tài khoản tiếp kiệm. Với tùy chọn số tiền gửi, kỳ hạn gửi và số tiền gửi góp vào hàng tháng tiếp theo.&lt;/li&gt;
+&lt;li&gt;Mỗi tài khoản có thể mở nhiều tài khoản tiếp kiệm. Với tùy chọn số tiền gửi, kỳ hạn gửi và số tiền gửi góp vào hàng tháng tiếp theo.
+&lt;img src=&#34;images/6.png&#34; alt=&#34;saving-account-print&#34;&gt;&lt;/li&gt;
 &lt;li&gt;Tất toán tiền gửi: sẽ xóa bỏ tài khoản tiền gửi, cộng lãi và gốc vào tài khoản hiện tại. Giao dịch được ghi lại và liệt kê tại Lịch sử giao dịch.
 &lt;img src=&#34;images/4.png&#34; alt=&#34;saving-account&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
