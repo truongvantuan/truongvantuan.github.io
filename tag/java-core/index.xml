@@ -46,9 +46,63 @@
       <guid>https://truongvantuan.github.io/project/atm-banking-javacore/</guid>
       <description>&lt;h1 id=&#34;bài-kiểm-tra-kết-thúc-module-java-core&#34;&gt;Bài kiểm tra kết thúc module Java Core&lt;/h1&gt;
 &lt;p&gt;Đề bài: Thiết kế ứng dụng ngân hàng mô phỏng các chức năng tạo tài khoản, nạp/rút tiền, tài khoản gửi/vay, tất toán khoản gửi/vay, &amp;hellip;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;images/main.png&#34; alt=&#34;Main Menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Main Menu&#34; srcset=&#34;
+               /project/atm-banking-javacore/images/main_hu3e3fe1ab5a386ff270474566cefac38f_41314_6e1050a01d4f78e48b921fe3bd0914b8.png 400w,
+               /project/atm-banking-javacore/images/main_hu3e3fe1ab5a386ff270474566cefac38f_41314_3f8727ce213ad06286926b5ce7b9f57c.png 760w,
+               /project/atm-banking-javacore/images/main_hu3e3fe1ab5a386ff270474566cefac38f_41314_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://truongvantuan.github.io/project/atm-banking-javacore/images/main_hu3e3fe1ab5a386ff270474566cefac38f_41314_6e1050a01d4f78e48b921fe3bd0914b8.png&#34;
+               width=&#34;760&#34;
+               height=&#34;281&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;Diagram mô tả cấu trúc ứng dụng:
-&lt;img src=&#34;images/BankTransaction_Diagram.png&#34; alt=&#34;diagram&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;diagram&#34; srcset=&#34;
+               /project/atm-banking-javacore/images/BankTransaction_Diagram_hu2eed9cb4a50cdb638155ece96e7935bb_89319_d7722a8ee231c4e412bf39cfba145dbe.png 400w,
+               /project/atm-banking-javacore/images/BankTransaction_Diagram_hu2eed9cb4a50cdb638155ece96e7935bb_89319_7c36c29ce1c4a16414f076b45f8849b6.png 760w,
+               /project/atm-banking-javacore/images/BankTransaction_Diagram_hu2eed9cb4a50cdb638155ece96e7935bb_89319_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://truongvantuan.github.io/project/atm-banking-javacore/images/BankTransaction_Diagram_hu2eed9cb4a50cdb638155ece96e7935bb_89319_d7722a8ee231c4e412bf39cfba145dbe.png&#34;
+               width=&#34;760&#34;
+               height=&#34;373&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;h1 id=&#34;plugins---tools-sử-dụng&#34;&gt;Plugins - Tools sử dụng&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Maven : build và quản lý Dependency&lt;/li&gt;
@@ -68,16 +122,97 @@ mvn compiler:compile
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ol&gt;
 &lt;li&gt;Menu  - chọn chức năng với số tương ứng
-&lt;img src=&#34;images/1.png&#34; alt=&#34;menu&#34;&gt;&lt;/li&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;menu&#34; srcset=&#34;
+               /project/atm-banking-javacore/images/1_hu9a5f28f90665a4ad0d72a5332972c640_23960_463a8a2c9472f10478aa94c69a413446.png 400w,
+               /project/atm-banking-javacore/images/1_hu9a5f28f90665a4ad0d72a5332972c640_23960_9a30bd027f6da71400fea0ad558de5d8.png 760w,
+               /project/atm-banking-javacore/images/1_hu9a5f28f90665a4ad0d72a5332972c640_23960_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://truongvantuan.github.io/project/atm-banking-javacore/images/1_hu9a5f28f90665a4ad0d72a5332972c640_23960_463a8a2c9472f10478aa94c69a413446.png&#34;
+               width=&#34;760&#34;
+               height=&#34;188&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Tạo tài khoản: tạo mới tài khoản với tên và số CMND, tài khoản đã có báo &amp;ldquo;Tài khoản đã được tạo!&amp;rdquo;. Các tài khoản sẽ được giả định tạo trong quá khứ để test các chức năng tất toán tài khoản.
-&lt;img src=&#34;images/2.png&#34; alt=&#34;show info&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;show info&#34; srcset=&#34;
+               /project/atm-banking-javacore/images/2_hud09337ef210713c77c97aab8ec21c94f_16494_45e5152da54d3997331e70a03e17f300.png 400w,
+               /project/atm-banking-javacore/images/2_hud09337ef210713c77c97aab8ec21c94f_16494_d0aec27c88c154abadcb962db76f147d.png 760w,
+               /project/atm-banking-javacore/images/2_hud09337ef210713c77c97aab8ec21c94f_16494_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://truongvantuan.github.io/project/atm-banking-javacore/images/2_hud09337ef210713c77c97aab8ec21c94f_16494_45e5152da54d3997331e70a03e17f300.png&#34;
+               width=&#34;390&#34;
+               height=&#34;241&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Lịch sử giao dịch: xem thông tin thay đổi tài khoản, tiền nạp/rút, các giao dịch làm biến động số dư.
-&lt;img src=&#34;images/3.png&#34; alt=&#34;log&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;log&#34; srcset=&#34;
+               /project/atm-banking-javacore/images/3_huce9b3c0ed99cbad8d384c0ccfa454d8e_20867_06f66b225992663b9092d804126f30d8.png 400w,
+               /project/atm-banking-javacore/images/3_huce9b3c0ed99cbad8d384c0ccfa454d8e_20867_4aca8cdd86b3421a9acbc724c95d107c.png 760w,
+               /project/atm-banking-javacore/images/3_huce9b3c0ed99cbad8d384c0ccfa454d8e_20867_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://truongvantuan.github.io/project/atm-banking-javacore/images/3_huce9b3c0ed99cbad8d384c0ccfa454d8e_20867_06f66b225992663b9092d804126f30d8.png&#34;
+               width=&#34;760&#34;
+               height=&#34;144&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
@@ -85,9 +220,63 @@ mvn compiler:compile
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Mỗi tài khoản có thể mở nhiều tài khoản tiếp kiệm. Với tùy chọn số tiền gửi, kỳ hạn gửi và số tiền gửi góp vào hàng tháng tiếp theo.
-&lt;img src=&#34;images/6.png&#34; alt=&#34;saving-account-print&#34;&gt;&lt;/li&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;saving-account-print&#34; srcset=&#34;
+               /project/atm-banking-javacore/images/6_hu7dde0b49c5964c03b9ae4d075f28119c_14472_f5c9b9469fefa397382dec83e2a1a4e5.png 400w,
+               /project/atm-banking-javacore/images/6_hu7dde0b49c5964c03b9ae4d075f28119c_14472_d9c70eb4e3c1833a0ee6c8e2a1544a6b.png 760w,
+               /project/atm-banking-javacore/images/6_hu7dde0b49c5964c03b9ae4d075f28119c_14472_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://truongvantuan.github.io/project/atm-banking-javacore/images/6_hu7dde0b49c5964c03b9ae4d075f28119c_14472_f5c9b9469fefa397382dec83e2a1a4e5.png&#34;
+               width=&#34;428&#34;
+               height=&#34;238&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
 &lt;li&gt;Tất toán tiền gửi: sẽ xóa bỏ tài khoản tiền gửi, cộng lãi và gốc vào tài khoản hiện tại. Giao dịch được ghi lại và liệt kê tại Lịch sử giao dịch.
-&lt;img src=&#34;images/4.png&#34; alt=&#34;saving-account&#34;&gt;&lt;/li&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;saving-account&#34; srcset=&#34;
+               /project/atm-banking-javacore/images/4_hua3b88a0b9c2a0634dd5825eca5c7fcc7_16760_2b67dd7555a8fc7ec10a9b399f5bf1b1.png 400w,
+               /project/atm-banking-javacore/images/4_hua3b88a0b9c2a0634dd5825eca5c7fcc7_16760_842a779ea12cec013ff4156626346f90.png 760w,
+               /project/atm-banking-javacore/images/4_hua3b88a0b9c2a0634dd5825eca5c7fcc7_16760_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://truongvantuan.github.io/project/atm-banking-javacore/images/4_hua3b88a0b9c2a0634dd5825eca5c7fcc7_16760_2b67dd7555a8fc7ec10a9b399f5bf1b1.png&#34;
+               width=&#34;671&#34;
+               height=&#34;123&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Thực hiện vay tiền&lt;/li&gt;
@@ -96,7 +285,34 @@ mvn compiler:compile
 &lt;li&gt;Giả định thẩm định tài sản: bởi số dư hiện có, dẫn đến số tiền có thể vay tối da là nhân 2 lần số dư.&lt;/li&gt;
 &lt;li&gt;Thực hiện vay tiền: nhập số tiền cần vay, kỳ hạn vay.&lt;/li&gt;
 &lt;li&gt;Tất toán: Tất toán sẽ thực hiện đóng tài khoản vay, sử dụng số dư trong trong tài khoản để tất toán khoản vay.
-&lt;img src=&#34;images/5.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;image&#34; srcset=&#34;
+               /project/atm-banking-javacore/images/5_hu979996b5c108a5ad9f896b5f9457061c_37158_173c9002c4db7caa285d4a9ba9e54563.png 400w,
+               /project/atm-banking-javacore/images/5_hu979996b5c108a5ad9f896b5f9457061c_37158_9df6864e11c5032a37156565bb112ebb.png 760w,
+               /project/atm-banking-javacore/images/5_hu979996b5c108a5ad9f896b5f9457061c_37158_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://truongvantuan.github.io/project/atm-banking-javacore/images/5_hu979996b5c108a5ad9f896b5f9457061c_37158_173c9002c4db7caa285d4a9ba9e54563.png&#34;
+               width=&#34;760&#34;
+               height=&#34;230&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
