@@ -564,5 +564,362 @@ Ngược lại, việc giải thích cho người khác giúp bạn thực hành
 </description>
     </item>
     
+    <item>
+      <title>Hướng dẫn lập trình Java theo tiêu chuẩn Google - Phần 1</title>
+      <link>https://truongvantuan.github.io/post/java-style-guide-part1/</link>
+      <pubDate>Fri, 19 Mar 2021 13:08:08 +0700</pubDate>
+      <guid>https://truongvantuan.github.io/post/java-style-guide-part1/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Bài viết gốc: &lt;a href=&#34;https://google.github.io/styleguide/javaguide.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Java Style Guide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Việc định dạng cấu trúc code giờ đây có thể được hoành thành bởi tính năng format document có sẵn trong các editor, IDE. Tuy nhiên việc nắm vững các quy chuẩn viết code, ở đây là chuẩn Google giúp nâng cao kỹ năng lập trình của bạn lên một cấp độ mới. Cách thức trình bày code tốt cho thấy sự chuyên nghiệp,&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;1-giới-thiệu&#34;&gt;1. Giới thiệu&lt;/h1&gt;
+&lt;p&gt;Tài liệu này đóng vai trò là định nghĩa hoàn chỉnh &amp;ldquo;tiêu chuẩn viết code Google&amp;rdquo; đối với ngôn ngữ lập trình Java. Tệp mã nguồn được gọi là &amp;ldquo;Google Style&amp;rdquo; nếu nó tuần thủ các quy tắc sau đây.&lt;/p&gt;
+&lt;p&gt;Giống với các hướng dẫn viết code ở những ngôn ngữ khác, các vấn đề được đề cập không chỉ là tính thẩm mỹ trong trình bày code mà còn là các quy chuẩn, quy ước viết code khác. Tuy nhiên, tài liệu này chủ yếu tập trung vào các quy tắc nhanh chóng mà chúng tôi tuân theo trên toàn cầu, và tránh đưa ra những lời khuyên không thể thực thi rõ ràng (kể cả con người và công cụ).&lt;/p&gt;
+&lt;h2 id=&#34;11-ghi-chú-thuật-ngữ&#34;&gt;1.1 Ghi chú thuật ngữ&lt;/h2&gt;
+&lt;p&gt;Trong tài liệu này, trừ khi được làm rõ:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Thuật ngữ class là chỉ class thông thường, enum class, interface hoặc kiểu đánh dấu (annotation type).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Thuật ngữ member (của một class) được sử dụng để chỉ class lồng nhau, trường (field), phương thức (method), hàm dựng (constructor). Nghĩa là tất cả các thành phần cấp cao nhất của một class ngoại trừ trình khởi tạo (khai báo và khởi tạo biến) và nhận xét (initializers and comments).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Thuật ngữ comment luôn đề cập đến bình luận triển khai (implementation comment - tức diễn giải cách bạn thực thi các hàm, code). Chúng tôi không sử dụng cụm từ nhận xét tài liệu (documentation comments), thay vào đó sử dụng thuật ngữ Javadocs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Các ghi chú thuật ngữ khác thỉnh thoảng sẽ xuất hiện trong suốt tài liệu.&lt;/p&gt;
+&lt;h2 id=&#34;12-ghi-chú-hướng-dẫn&#34;&gt;1.2 Ghi chú hướng dẫn&lt;/h2&gt;
+&lt;p&gt;Các ví dụ trong tài liệu này là &lt;strong&gt;non-normative () //todo&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;2-các-cơ-bản-về-tệp-mã-nguồn&#34;&gt;2. Các cơ bản về tệp mã nguồn**&lt;/h1&gt;
+&lt;h2 id=&#34;21-tên-tệp&#34;&gt;2.1 Tên tệp&lt;/h2&gt;
+&lt;p&gt;Tên tệp trùng với tên class cao nhất mà tệp chứa, có phân biệt chữ hoa và chữ thường kết thúc bằng đuôi mở rộng &lt;code&gt;.java&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;22-mã-hóa-tệp-utf-8&#34;&gt;2.2 Mã hóa tệp UTF-8&lt;/h2&gt;
+&lt;p&gt;Các tệp mã nguồn được mã hóa bằng &lt;strong&gt;UTF-8&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;3-cấu-trúc-tệp-mã-nguồn&#34;&gt;3. Cấu trúc tệp mã nguồn&lt;/h1&gt;
+&lt;p&gt;Một tệp mã nguồn theo thứ tự bao gồm:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Giấy phép, thông tin bản quyền nếu có.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Câu lệnh package.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Câu lệnh import.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Một lớp cấp cao nhất.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Một dòng trống để phân tách các thành phần trên.&lt;/p&gt;
+&lt;h2 id=&#34;31-giấy-phép-thông-tin-bản-quyền-nếu-có&#34;&gt;3.1 Giấy phép, thông tin bản quyền nếu có.&lt;/h2&gt;
+&lt;p&gt;Nếu giấy phép hoặc thông tin bản quyền thuộc về một tệp, nó sẽ gi rõ ở đây.&lt;/p&gt;
+&lt;h2 id=&#34;32-câu-lệnh-package&#34;&gt;3.2 Câu lệnh package&lt;/h2&gt;
+&lt;p&gt;Câu lệnh package không được xuống dòng. Giới hạn số cột (100 ký tự &lt;strong&gt;ASCII&lt;/strong&gt;) không áp dụng cho câu lệnh package.&lt;/p&gt;
+&lt;h2 id=&#34;33-câu-lệnh-import&#34;&gt;3.3 Câu lệnh import&lt;/h2&gt;
+&lt;h3 id=&#34;331-không-import-đại-diện-wildcard-import---import-tắt&#34;&gt;3.3.1 Không import đại diện (wildcard import - import tắt)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Import&lt;/strong&gt; đại diện, tĩnh hoặc cách khác không được sử dụng.&lt;/p&gt;
+&lt;h3 id=&#34;332-không-xuống-dòng&#34;&gt;3.3.2 Không xuống dòng&lt;/h3&gt;
+&lt;p&gt;Câu lệnh &lt;code&gt;import&lt;/code&gt; không được xuống dòng. Giới hạn số cột (100 ký tự ASCII) không áp dụng cho câu lệnh import.&lt;/p&gt;
+&lt;h3 id=&#34;333-thứ-tự-và-khoảng-cách&#34;&gt;3.3.3 Thứ tự và khoảng cách&lt;/h3&gt;
+&lt;p&gt;Imports được sắp xếp như sau:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Tất cả các &lt;code&gt;static imports&lt;/code&gt; trong một khối duy nhất.&lt;/li&gt;
+&lt;li&gt;Tất cả các &lt;code&gt;non-static imports&lt;/code&gt; trong một khối duy nhất.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Nếu có cả hai, phân tách chúng bằng một dòng trống. Giữa các câu lệnh import không được có dòng trống.&lt;/p&gt;
+&lt;p&gt;Trong mỗi khối, các tên được import sắp xếp theo thứ tự ký tự &lt;strong&gt;ASCII&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;334-không-import-tĩnh-static-import-cho-class&#34;&gt;3.3.4 Không import tĩnh (static import) cho class&lt;/h3&gt;
+&lt;p&gt;Static import không được sử dụng cho các class lồng nhau tĩnh (static nested class). Chúng được import với các import thông thường.&lt;/p&gt;
+&lt;h2 id=&#34;34-khai-báo-class&#34;&gt;3.4 Khai báo class&lt;/h2&gt;
+&lt;h3 id=&#34;341-khai-báo-chính-xác-một-class-cấp-cao-nhất&#34;&gt;3.4.1 Khai báo chính xác một class cấp cao nhất&lt;/h3&gt;
+&lt;p&gt;Mỗi class cấp cao nhất nằm trong mỗi tệp mã nguồn của riêng nó.&lt;/p&gt;
+&lt;h3 id=&#34;342-thứ-tự-sắp-xếp-các-nội-dung-trong-class&#34;&gt;3.4.2 Thứ tự sắp xếp các nội dung trong class&lt;/h3&gt;
+&lt;p&gt;Thứ tự bạn chọn cho các thành phần (members), các trình khởi tạo (initializers) của class có ảnh hưởng lớn đến khả năng đọc hiểu code. Tuy nhiên không có công thức duy nhất để làm việc này. Các class khác nhau có thể sắp xếp các thành phần theo cách khác nhau.&lt;/p&gt;
+&lt;p&gt;Điều quan trọng là mỗi class sử dụng một số thứ tự logic mà người bảo trì (maintainer) của nó có thể giải thích nếu được hỏi đến. Ví dụ: các phương thức mới thường được thêm vào cuối class, đây là thứ tự theo thời gian mở rộng class chứ không phải thứ tự logic.&lt;/p&gt;
+&lt;h4 id=&#34;3421-nạp-chồng-không-chia-tách&#34;&gt;3.4.2.1 Nạp chồng: không chia tách&lt;/h4&gt;
+&lt;p&gt;Khi class có nhiều hàm dựng (constructor), nhiều phương thức (method) với tên giống nhau, chúng được sắp xếp gần nhau, không có thành phần nào xen vào giữa.&lt;/p&gt;
+&lt;h1 id=&#34;4-định-dạng&#34;&gt;4. Định dạng&lt;/h1&gt;
+&lt;p&gt;Lưu ý thuật ngữ: cấu trúc dạng khối (block-like construct) là toàn bộ cấu trúc hoàn chỉnh của một class, phương thức (method), hàm dụng (constructor). Lưu ý rằng: bất kỳ bộ khởi tạo mạng nào cũng có thể tùy chọn xử lý như thể nó là một cấu trúc dạng khối.&lt;/p&gt;
+&lt;h2 id=&#34;41-dấu-ngoặc-nhọn&#34;&gt;4.1 Dấu ngoặc nhọn&lt;/h2&gt;
+&lt;h3 id=&#34;411-dấu-ngoặc-nhọn-được-sử-dụng-khi-tùy-chọn&#34;&gt;4.1.1 Dấu ngoặc nhọn được sử dụng khi tùy chọn&lt;/h3&gt;
+&lt;p&gt;Dấu ngoặc nhọn được sử dụng trong các câu lệnh if, else, for, do và while. Kể cả khi phần thân rỗng hoặc chỉ chứ duy nhất một câu lệnh.&lt;/p&gt;
+&lt;h3 id=&#34;412-các-khối-chứa-nội-dung-phong-cách-k--r&#34;&gt;4.1.2 Các khối chứa nội dung: phong cách K &amp;amp; R&lt;/h3&gt;
+&lt;p&gt;Dấu ngoặc nhọn theo phong cách K &amp;amp; R (Kernighan and Ritchie style) khối có nội dung và các dạng khối.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Không xuống dòng trước dấy mở ngoặc ( { ).&lt;/li&gt;
+&lt;li&gt;Xuống dòng ngay sau dấy mở ngoặc ( { ).&lt;/li&gt;
+&lt;li&gt;Xuông dòng trước dấu đóng ngoặc ( } ).&lt;/li&gt;
+&lt;li&gt;Xuống dòng ngay sau dấu ngoặc nhọn đóng ( } ), chỉ khi đấu ngoặc nhọn đó kết thúc một câu lệnh hoặc kết thúc phần thân của một phương thức. Ví dụ không ngắt dòng sau dấu ngoặc nhọn nếu sau nó là else hoặc dấu chấm phẩy
+Ví dụ:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;return () -&amp;gt; {
+  while (condition()) {
+    method();
+  }
+};
+
+return new MyClass() {
+  @Override public void method() {
+    if (condition()) {
+      try {
+        something();
+      } catch (ProblemException e) {
+        recover();
+      }
+    } else if (otherCondition()) {
+      somethingElse();
+    } else {
+      lastThing();
+    }
+  }
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;413-các-khối-rỗng-có-thể-làm-ngắn-gọn&#34;&gt;4.1.3 Các khối rỗng: có thể làm ngắn gọn&lt;/h3&gt;
+&lt;p&gt;Một khối rỗng hoặc cấu trúc dạng khối có thể theo phong cách K &amp;amp; R. Ngoài ra nó có thể đóng ngoặc liền sau dấu mở ngoặc, không có ký tự hay ngắt dòng ở giữa ( {} ).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;  // This is acceptable
+  void doNothing() {}
+
+  // This is equally acceptable
+  void doNothingElse() {
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;  // This is not acceptable: No concise empty blocks in a multi-block statement
+  try {
+    doSomething();
+  } catch (Exception e) {}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;42-thụt-lể-một-khối-2-khoảng-trống&#34;&gt;4.2 Thụt lể một khối: +2 khoảng trống.&lt;/h2&gt;
+&lt;p&gt;Mỗi khi một khối hay cấu trúc dạng khối bắt đầu, thụ lề tăng 2 dấu cách. Khi một khối kết thúc, thục lề trở về bằng mức trước đó. Mưc thụt lề được áp dụng cả code mà comment.&lt;/p&gt;
+&lt;h2 id=&#34;43-mỗi-hàng-một-câu-lệnh&#34;&gt;4.3 Mỗi hàng một câu lệnh&lt;/h2&gt;
+&lt;p&gt;Mỗi câu lệnh được theo sau bởi một dấu ngắt dòng.&lt;/p&gt;
+&lt;h2 id=&#34;44-giới-hạn-số-cột-100&#34;&gt;4.4 Giới hạn số cột: 100&lt;/h2&gt;
+&lt;p&gt;Java code có giới hạn cột là 100 ký tự. Một ký tự là một điểm mã Unicode bất kỳ. Ngoại từ vài lưu ý dưới đây: bất kỳ dòng nào vượt quá giới hạn này phải được bọc dòng (line-wrapped).&lt;/p&gt;
+&lt;p&gt;Mỗi điểm mã Unicode được tính là một ký tự, kể cả khi chiều  rộng của nó lớn hơn hay nhỏ hơn. Nếu sử dụng các ký tự fullwidth bạn có thế chọn xuống dòng sớm để tuân thử quy tắc này.&lt;/p&gt;
+&lt;p&gt;Các ngoại lệ:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Các dòng  không tuân theo giới hạn cột (một URL dài trong Javadocs hoặc một tham chiếu phương thức JSNI dài).&lt;/li&gt;
+&lt;li&gt;Câu lệnh package hoặc import.&lt;/li&gt;
+&lt;li&gt;Các dòng lệnh trong phần comment có thể được cut-and-pasted để chạy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;45-xuống-dòng&#34;&gt;4.5 Xuống dòng&lt;/h2&gt;
+&lt;p&gt;Ghi chú thuật ngữ: Khi code trên một dòng được chia thành nhiều dòng, hành động này được gọi là line-wrapping.&lt;/p&gt;
+&lt;p&gt;Không có công thức xác định toàn diện nào chỉ ra chính xác cách xuống hàng trong các trường hợp. Thông thường có một số cách hợp lệ sau.&lt;/p&gt;
+&lt;p&gt;Note: Mặc dù lý do điển hình cho việc xuống dòng là để tránh vượt quá giới hạn cột, nhưng trong thực tế mặc dù code nằm trong giới hạn quy định cũng có thể được xuống dòng theo quy định của tác giả.&lt;/p&gt;
+&lt;p&gt;Tip: Việc trích xuất một phương thức, một biến cục bộ có thể giải quyết  vấn đề mà không phải xuống dòng.&lt;/p&gt;
+&lt;h3 id=&#34;451-ngắt-dòng-ở-đâu&#34;&gt;4.5.1 Ngắt dòng ở đâu&lt;/h3&gt;
+&lt;p&gt;Nhận biết chính của ngắt dòng là: ưu tiên ngắt dòng ở cấp độ cú pháp cao hơn.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Một dòng được ngắt tại toán tử non-assignment*, *ngắt dòng ngay trước ký tự.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Điều này cũng áp dụng cho cho các ký hiệu giống toán tử sau:
+&lt;ul&gt;
+&lt;li&gt;Dấu chấm phân cách (.)&lt;/li&gt;
+&lt;li&gt;Hai dấu hai chấm của một tham chiếu hàm ( :: )&lt;/li&gt;
+&lt;li&gt;Một dấu và (&amp;amp;) trong ràng buộc kiểu (type)(&lt;code&gt;catch(FooException|BarException e)&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Một dấu gạch dọc ( | ) trong khối catch (&lt;code&gt;catch(FooException|BarException e)&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Khi môt dòng bị ngắt tại toán tử assignment, ngắt dòng ngay sau ký hiệu. Nhưng một trong hai cách đều có thể chấp nhận được.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Điều này cũng áp dụng dạng toán tử gán trong câu lệnh for nâng cao (foreach).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Một tên phương thức hoặc tên hàm dụng vẫn được gán vào đấu ngoặc đơn mở ngay sau nó.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A comma (&lt;code&gt;,&lt;/code&gt;) stays attached to the token that precedes it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Một dòng không được ngắt cạnh mũi tên (-&amp;gt;) trong lambda, ngoại trừ có thể ngắt dòng ngay sau mũi tên nếu phần thân cảu lambda bao gồm một biểu không có dấu.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;MyLambda&amp;lt;String, Long, Object&amp;gt; lambda =
+    (String label, Long value, Object obj) -&amp;gt; {
+        ...
+    };
+
+Predicate&amp;lt;String&amp;gt; predicate = str -&amp;gt;
+    longExpressionInvolving(str);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: mục đích chính của việc xuống dòng là trình bày code rõ rãng, dễ đọc. Không nhất thiết để tuân thủ quy định giới hạn cột 100 ký tư.&lt;/p&gt;
+&lt;h3 id=&#34;452-thụt-lề-các-dòng-liên-tiếp-ít-nhất-4-dấu-cách&#34;&gt;4.5.2 Thụt lề các dòng liên tiếp ít nhất +4 dấu cách&lt;/h3&gt;
+&lt;p&gt;Khi ngắt dòng, mỗi dòng sau dòng đầu tiên được thụt lề ít nhất +4 sao với dòng ban đầu.&lt;/p&gt;
+&lt;p&gt;Khi có nhiều dòng tiếp nối, thụt lề có thể thay đổi lớn hơn 4 theo mong muốn. Nói chung hai dòng liên tục sử dụng cùng một mức thụt lề nếu và chỉ khi chúng bằng đầu bằng các phần tử song song về mặt cú pháp.&lt;/p&gt;
+&lt;h2 id=&#34;46-khoảng-trắng&#34;&gt;4.6 Khoảng trắng&lt;/h2&gt;
+&lt;h3 id=&#34;461-khoảng-trắng-theo-chiều-dọc-dọc&#34;&gt;4.6.1 Khoảng trắng theo chiều dọc dọc&lt;/h3&gt;
+&lt;p&gt;Một dòng trống thường xuất hiện:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Giữa các thành phần và trình khởi tạo (members or initializers) liên tiếp của class: fields, constructors, methods, nested class, static initializers, and instance initializers.
+Ngoại trừ:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Một dòng trống giữa 2 trường liên tiếp (không có đoạn code nào giữa chúng) là tùy chọn. Các dòng trống được sử dụng để gộp các nhóm thuộc tính hợp lý.&lt;/li&gt;
+&lt;li&gt;Các dòng trống giữa các hằng số enum.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Theo yêu cầu ở các phần khác  trong tài liệu này (such as Section 3, &lt;a href=&#34;https://google.github.io/styleguide/javaguide.html#s3-source-file-structure&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Source file structure&lt;/a&gt;, and Section 3.3, &lt;a href=&#34;https://google.github.io/styleguide/javaguide.html#s3.3-import-statements&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Import statements&lt;/a&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Một dòng trống duy nhất có thể sử dụng bất cứ nơi đâu để giúp việc đọc code dễ hơn, ví dụ giữa các câu lệnh để chia code thành cac mục nhỏ hợp lý.&lt;/p&gt;
+&lt;p&gt;Nhiều dòng trống là đước phép, những không cần thiết hay được khuyến khích.&lt;/p&gt;
+&lt;h3 id=&#34;462-khoảng-trắng-theo-chiều-ngang&#34;&gt;4.6.2 Khoảng trắng theo chiều ngang&lt;/h3&gt;
+&lt;p&gt;Bên cạnh các yêu cầu từ ngôn ngữ hoặc từ quy tắc trình bày code khác, một khoản trống ASCII duy nhất chỉ xuất hiện ở những nơi sau.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Nơi ngăn cách các từ dành riêng &lt;code&gt;if&lt;/code&gt;, &lt;code&gt;for&lt;/code&gt;, &lt;code&gt;catch&lt;/code&gt; khởi dấu ngoặc đơn mở ( ( ) theo sau từ đó ngay tại dòng đó.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Nơi ngăn cách các từ dành riêng &lt;code&gt;else&lt;/code&gt;, &lt;code&gt;catch&lt;/code&gt; với dấu ngoặc nhọn đóng ( } ) đứng trước nó tại dòng đó.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Trước bất kỳ dấu ngoặc nhọn mở ( { ) nào, với 2 ngoại lệ: 1.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;@SomeAnnotation({a, b})&lt;/code&gt; (no space is used)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;String[][] x ={{&amp;quot;foo&amp;quot;}};&lt;/code&gt; (no space is required between &lt;code&gt;{{&lt;/code&gt;, by item 8 below)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Trên cả 2 mặt của bất kỳ toán tử nhị phân, toán tử bậc 3. Điều này cũng áp dụng cho các ký hiệu &amp;ldquo;giống toán tử&amp;rdquo; sau:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ký hiệu &amp;amp; trong kiểu ràng buộc &lt;code&gt;&amp;lt;T extendsFoo&amp;amp;Bar&amp;gt;&lt;/code&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dấy gạch dọc ( | ) trong khối catch bắt nhiều trường hợp ngoại lệ &lt;code&gt;catch(FooException|BarException e)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dấu 2 chấm (:) trong câu lệnh for nâng cao (forteach)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;dấu mũi tên trong biểu thức lambda&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Không áp cụng cho:
+&lt;ul&gt;
+&lt;li&gt;Hai dấu 2 chấm (::) của một phương thức tham chiếu&lt;/li&gt;
+&lt;li&gt;Dấu chấm ngăn cách (.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Sau ,:; hoặc dấu ngoặc đơn đóng ( ) ) của một tập hợp&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Trên cả hai mặt của dấu gạch chéo kép // khi bắt đầu nhận xét cuối dòng.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Giữa kiểu dữ liệu và tên biến của một khai báo biến.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tùy chọn chỉ bên trong cả hai dấu ngoặc nhọn của trình khởi tạo mảng&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Quy tắc này không bao giờ được hiểu là yêu cầu hoặc cấm thêm khoảng trắng ở đầu hoặc cuối dòng, nó chỉ giải quyết vấn đề tiết kiệm không gian để viết code .&lt;/p&gt;
+&lt;h3 id=&#34;463-căn-chỉnh-theo-chiều-ngang-không-cần-thiết&#34;&gt;4.6.3 Căn chỉnh theo chiều ngang: không cần thiết&lt;/h3&gt;
+&lt;p&gt;Lưu ý thuật ngữ: Căn chỉnh theo chiều ngang (&lt;em&gt;Horizontal alignment&lt;/em&gt;) là hành động thêm một vài khoảng trắng vào code với mục đích làm mã thông báo nhất định xuất hiện ngay bên dưới một số mã thông báo khác trên các dòng trước đó.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;private  int x;  // this is fine  
+private  Color color;  // this too  
+private  int x;  // permitted, but future edits  
+private  Color color;  // may leave it unaligned
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hành động này là cho phép, nhưng không bắt buộc bởi Google Style. Thâm chí không cần duy trì căn chỉnh theo chiều ngang ở những nơi mà nó đã được sử dụng.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tip&lt;/strong&gt;: Căn chỉnh giúp việc đọc code dễ hơn, nhưng nó tọa ra các vấn đề cho việc bảo trì trong tương lai.&lt;/p&gt;
+&lt;h2 id=&#34;47-phân-nhóm-các-dấu-ngoặc-đơn-khuyến-nghị&#34;&gt;4.7 Phân nhóm các dấu ngoặc đơn: khuyến nghị&lt;/h2&gt;
+&lt;p&gt;Dấu ngoặc đơn phân nhóm tùy chọn chỉ được bỏ qua khi tác giả và người đánh giá đồng ý rằng không có khả năng hợp lý mã sẽ bị hiểu sai nếu không có chúng, cũng như chúng sẽ làm cho mã dễ đọc hơn. Không hợp lý khi cho rằng mọi người đọc đều ghi nhớ toàn bộ bảng ưu tiên toán tử Java.&lt;/p&gt;
+&lt;h2 id=&#34;48-các-cấu-trúc-cụ-thể&#34;&gt;4.8 Các cấu trúc cụ thể&lt;/h2&gt;
+&lt;h3 id=&#34;481-các-lớp-enum&#34;&gt;4.8.1 Các lớp Enum&lt;/h3&gt;
+&lt;p&gt;Sau mỗi dấu phẩy theo sau một hằng số Enum, được tùy chọn ngắt dòng.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;private enum Answer {
+  YES {
+    @Override public String toString() {
+      return &amp;quot;yes&amp;quot;;
+    }
+  },
+
+  NO,
+  MAYBE
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Một lớp enum không có phương thức và tài kiệu về các hàng số của nó có  thể tùy chọn định dạng như là khởi tạo mảng.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;private enum Suit { CLUBS, HEARTS, SPADES, DIAMONDS }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Vì enum là một class nên áp dụng các quy tắc của class.&lt;/p&gt;
+&lt;h3 id=&#34;482-khai-báo-biến&#34;&gt;4.8.2 Khai báo biến&lt;/h3&gt;
+&lt;h4 id=&#34;4821-một-biến-cho-mỗi-khai-báo&#34;&gt;4.8.2.1 Một biến cho mỗi khai báo&lt;/h4&gt;
+&lt;p&gt;Mọi khai báo biến (trường hoạc cục bộ) chỉ khai báo một biến (từng biến một, dù rằng chung kiểu dữ liệu). Không cho phép &lt;code&gt;int a, b;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ngoại trừ nhiều khai báo biến được chấp nhận trong vòng lặp &lt;code&gt;for&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4822-khai-báo-khi-cần-thiết&#34;&gt;4.8.2.2 Khai báo khi cần thiết&lt;/h4&gt;
+&lt;p&gt;Các biến cục bộ không được khai báo theo thói quen đầu khối chứa chúng. Thay vào đó, chúng được khai báo gần với điểm chúng được sử dụng, để giảm thiểu phạm vi của nó.&lt;/p&gt;
+&lt;h3 id=&#34;483-mảng&#34;&gt;4.8.3 Mảng&lt;/h3&gt;
+&lt;h4 id=&#34;4831-trình-hởi-tạo-mảng-có-thể-là-dạng-khối-block-like&#34;&gt;4.8.3.1 Trình hởi tạo mảng: có thể là  dạng khối (block-like)&lt;/h4&gt;
+&lt;p&gt;Bất kể khai báo khởi tạo mảng nào đều được định dạng như là một khối.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;new int[] {           new int[] {
+  0, 1, 2, 3            0,
+}                       1,
+                        2,
+new int[] {             3,
+  0, 1,               }
+  2, 3
+}                     new int[]
+                          {0, 1, 2, 3}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;4832-không-khai-báo-mảng-giống-c-c-style&#34;&gt;4.8.3.2 Không khai báo mảng giống C (C-style)&lt;/h4&gt;
+&lt;p&gt;Dấu ngoặc vuông tạo nên một phần của kiểu, không phải của biến.
+Chấp nhận &lt;code&gt;String[] args&lt;/code&gt;, không khai báo &lt;code&gt;String args[]&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;484-câu-lệnh-switch&#34;&gt;4.8.4 Câu lệnh switch&lt;/h3&gt;
+&lt;p&gt;Lưu ý thuật ngữ: Bên trong dấu ngoặc nhọn của một khối switch (switch block) là một hoặc nhiều nhóm câu lệnh (statement groups). Mỗi nhóm câu lệnh bào gồm một hoặc nhiều nhãn chuyển đổi (switch labels) (either &lt;code&gt;case FOO:&lt;/code&gt; or &lt;code&gt;default:&lt;/code&gt;), theo sau là một hoặc nhiều câu lệnh.&lt;/p&gt;
+&lt;h4 id=&#34;4841-thụt-lề&#34;&gt;4.8.4.1 Thụt lề&lt;/h4&gt;
+&lt;p&gt;Giống với các khối lệnh khác, nội dung của một nhánh sẽ được thụt lề +2.&lt;/p&gt;
+&lt;p&gt;Sau nhãn chuyển đổi (case), thực hiện xuống dòng và mức thụt lề được tăng lên +2. Các case tiếp theo quay lại mức thụt lề bằng với case trước đó.&lt;/p&gt;
+&lt;h4 id=&#34;4842-fall-through-comment&#34;&gt;4.8.4.2 Fall-through: comment&lt;/h4&gt;
+&lt;h4 id=&#34;4843-trường-hợp-default&#34;&gt;4.8.4.3 Trường hợp default&lt;/h4&gt;
+&lt;p&gt;Mỗi câu lệnh switch bao gồm một nhóm câu lệnh trong nhánh &lt;code&gt;default&lt;/code&gt;, kể cả khi nhóm đó không chứa câu lệnh nào.&lt;/p&gt;
+&lt;p&gt;Ngoại trừ: Câu lệnh switch cho kiểu enum có thể bỏ qua nhóm câu lệnh default, nếu nó bao gồm các trường hợp rõ ràng gồm tất cả cả giá trị có thể của loại đó. Dần đến IDE sẽ đưa ra cảnh báo nếu bỏ sót bất kỳ trường hợp nào.&lt;/p&gt;
+&lt;h3 id=&#34;485-các-đánh-dấu-annotations&#34;&gt;4.8.5 Các đánh dấu (Annotations)&lt;/h3&gt;
+&lt;p&gt;Các đánh dấu (annotations) cho một lớp (class), phương thức (method), hàm dựng (constructor) sẽ xuất hiện ngay sau khối tài liệu (documentation block) và mỗi đánh dấu sẽ được liệt kê trên một dòng của riêng nó (một annotation trên một dòng). Không áp dụng thụt lề đối với annotation. Ví dụ:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Override
+@Nullable
+public String getNameIfPresent() { ... }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Ngoại trừ&lt;/strong&gt;: Annotation của hàm không cố tham số tuyền vào có thể xuất hiện cùng  dòng đầu tiên của method signature (signature của một hàm bao gồm tên hàm và tham số truyền vào), ví dụ:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Override public int hashCode() { ... }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Các annotation cho trường (field) cũng xuất hiện ngay sau khối tài liệu (documentation block), nhưng trong trường hợp này nhiều annotation cùng nhau được liệt kê trên cùng một dòng, ví dụ:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Partial @Mock DataLoader loader;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Không có quy tắc cụ thể nào để định dạng các annotation cho các tham số,  biến cục bộ và kiểu dữ liệu.&lt;/p&gt;
+&lt;h3 id=&#34;486-các-nhận-xét-comments&#34;&gt;4.8.6 Các nhận xét (comments)&lt;/h3&gt;
+&lt;p&gt;Phần này nhắm đến các bình luận triển khai (implementation comments).&lt;/p&gt;
+&lt;h3 id=&#34;4861-các-kiểu-khối-comment&#34;&gt;4.8.6.1 Các kiểu khối comment&lt;/h3&gt;
+&lt;p&gt;Các khối comment được thụt lề cùng cấp với code quanh nó. Có thể là dạng &lt;code&gt;/* ... */&lt;/code&gt;, &lt;code&gt;// ....&lt;/code&gt;, và các dòng tiếp theo phải bắt đầu bằng dấu * thẳng hành với dấy * ở dòng trươc do. /*&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt; * This is          // And so           /* Or you can
+ * okay.            // is this.          * even do this. */  */
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Các bình luận không được đặt trong các hộp vẽ bằng dấu hoa thị hay ý tự khác.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TIP&lt;/strong&gt;: Khi viết bình luận nhiều dòng, sử dụng kiểu &lt;code&gt;/* ... */&lt;/code&gt; để bộ định dạng code tự động xuống dòng khi cần thiết (kiểu đoạn văn).&lt;/p&gt;
+&lt;p&gt;4.8.7  Modifiers&lt;/p&gt;
+&lt;p&gt;Các modifier nếu có được sắp xếp theo thứ tự theo quy định của ngôn ngữ Java&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public protected private abstract default static final transient volatile synchronized native strictfp
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;4.8.8 Numeric liter&lt;/p&gt;
+&lt;p&gt;các giá trị số nguyên lớn (&lt;code&gt;long&lt;/code&gt;) được sử dụng hậu tố &lt;code&gt;L&lt;/code&gt; (&lt;code&gt;3000000000L&lt;/code&gt;), không bảo giờ viết thường (&lt;code&gt;3000000000l&lt;/code&gt;) để tránh nhầm lẫn với số 1.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
