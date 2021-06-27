@@ -5,7 +5,7 @@
     <link>https://truongvantuan.github.io/tag/cleancode/</link>
       <atom:link href="https://truongvantuan.github.io/tag/cleancode/index.xml" rel="self" type="application/rss+xml" />
     <description>cleancode</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>vi-vn</language><copyright>© 2021 TRUONG TUAN</copyright><lastBuildDate>Fri, 19 Mar 2021 13:08:08 +0700</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>vi-vn</language><copyright>© 2021 TRUONG TUAN</copyright><lastBuildDate>Sun, 27 Jun 2021 17:10:04 +0700</lastBuildDate>
     <image>
       <url>https://truongvantuan.github.io/media/icon_hu3ca13aa75a58dd23742bac0bd9a006b0_16703_512x512_fill_lanczos_center_2.png</url>
       <title>cleancode</title>
@@ -13,13 +13,196 @@
     </image>
     
     <item>
+      <title>Hướng dẫn lập trình Java theo tiêu chuẩn Google - Phần 2</title>
+      <link>https://truongvantuan.github.io/post/java-style-guide-part2/</link>
+      <pubDate>Sun, 27 Jun 2021 17:10:04 +0700</pubDate>
+      <guid>https://truongvantuan.github.io/post/java-style-guide-part2/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Bài viết gốc: &lt;a href=&#34;https://google.github.io/styleguide/javaguide.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Java Style Guide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Phần 1: &lt;a href=&#34;https://truongvantuan.github.io/post/java-style-guide-part1/&#34;&gt;Hướng dẫn lập trình Java theo tiêu chuẩn Google - Phần 1&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Việc định dạng cấu trúc code giờ đây có thể được hoành thành bởi tính năng &amp;ldquo;format document&amp;rdquo; có sẵn trong các Editor, IDE. Tuy nhiên việc nắm vững các quy chuẩn viết code, ở đây là chuẩn Google Java giúp nâng cao kỹ năng lập trình của bạn lên một cấp độ mới. Cách thức trình bày code tốt cho thấy sự chuyên của lập trình viên, nó cũng gây ấn tượng tốt với nhà tuyển dụng.&lt;/p&gt;
+&lt;p&gt;Trong quá trình dịch sẽ không tránh khỏi sai sót, vì vậy rất mong các bạn tiếp cận bài viết gốc được dẫn link ở trên để có được nội dung chính xác nhất. Nếu trong quá trình tìm hiểu, nếu có phần nội dung nào bạn đã sử dụng thành thục, bạn nên bỏ qua vì nó đã chuyển thành kỹ năng của bạn rồi.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;5-đặt-tên&#34;&gt;5 Đặt tên&lt;/h1&gt;
+&lt;h2 id=&#34;51-quy-tắc-định-danh-chung&#34;&gt;5.1 Quy tắc định danh chung&lt;/h2&gt;
+&lt;p&gt;Định danh chỉ sử dụng số và chữ cái ASCII, một vài trường hợp sử dụng thêm dấu gạch dưới. Nó tương đương với biểu thức chính quy &lt;code&gt;\w+&lt;/code&gt;
+Trong Google Style các tiền tố hậu tố đặc biệt không được sử dụng. Ví dụ như các tên sau không tuân thủ Google Style: &lt;code&gt;name_&lt;/code&gt;, &lt;code&gt;mName&lt;/code&gt;, &lt;code&gt;s_name&lt;/code&gt; and &lt;code&gt;kName&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;52-quy-tắc-theo-loại-định-danh&#34;&gt;5.2 Quy tắc theo loại định danh&lt;/h2&gt;
+&lt;h3 id=&#34;521-tên-package&#34;&gt;5.2.1 Tên package&lt;/h3&gt;
+&lt;p&gt;Tên package đều là chữ viết thường, với các từ được nối liên tục nhau (không chèn dấu gạch dưới).
+Ví dụ: &lt;code&gt;com.example.deepspace&lt;/code&gt; không được &lt;code&gt;com.example.deepSpace&lt;/code&gt;, &lt;code&gt;com.example.deep_space&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;522-tên-class&#34;&gt;5.2.2 Tên class&lt;/h3&gt;
+&lt;p&gt;Tên class được viết theo chuẩn &lt;a href=&#34;https://google.github.io/styleguide/javaguide.html#s5.3-camel-case&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UpperCamelCase&lt;/a&gt;
+Tên class thường là danh từ hoặc cụm danh từ. Ví dụ: &lt;code&gt;Character&lt;/code&gt; or &lt;code&gt;ImmutableList&lt;/code&gt;
+Tên interface cũng có thể là danh từ hoặc cụm danh từ (ví dụ &lt;code&gt;List&lt;/code&gt;). Nhưng đôi khi là tính từ hoặc cụm tính từ (ví dụ &lt;code&gt;Readable&lt;/code&gt;)
+Không có quy tắc hay quy ước cụ thể để đặt tên đúng chuẩn cho dấu Annotation.
+Các test class được đặt tên bắt đầu bằng tên của class chúng test và kết thúc bởi Test. Ví dụ: &lt;code&gt;HashTest&lt;/code&gt;, &lt;code&gt;HashIntegrationTest&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;523-tên-method&#34;&gt;5.2.3 Tên method&lt;/h3&gt;
+&lt;p&gt;Tên method được viết theo chuẩn &lt;a href=&#34;https://google.github.io/styleguide/javaguide.html#s5.3-camel-case&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;lowerCamelCase&lt;/a&gt;
+Tên method thường là động từ hoặc cụm động từ. Ví dụ: &lt;code&gt;sendMessage&lt;/code&gt;, &lt;code&gt;stop&lt;/code&gt;.
+Dấu gạch dưới có thể xuất hiện trong tên phương thức JUnit test để tách các phần logic riêng biệt của tên, và mỗi phần được đinh dạng lowerCamelCase. Một mẫu tên điển hình là &lt;code&gt;&amp;lt;methodUnderTest&amp;gt;_&amp;lt;state&amp;gt;&lt;/code&gt;, ví dụ &lt;code&gt;pop_emptyStack&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;524-tên-constant&#34;&gt;5.2.4 Tên constant&lt;/h3&gt;
+&lt;p&gt;CONSTANT_CASE: Tất cả ký tự viết hoa, mỗi từ cách nhau một dấu gạch dưới.
+Hằng số là trường &lt;strong&gt;final static&lt;/strong&gt;, có giá trị không thay đổi, các phương thức không có khả năng làm thay đổi giá trị của hằng số. Nó bao gồm các kiểu nguyên thuỷ (primitives), String, các kiểu bất biến (immutable type), và danh sách các kiểu bất biến.&lt;/p&gt;
+&lt;p&gt;Ví dụ: Các tên sau thường là danh từ hoặc cụm danh từ.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;// Các khai báo hằng số
+static final int NUMBER = 5;
+static final ImmutableList&amp;lt;String&amp;gt; NAMES = ImmutableList.of(&amp;quot;Ed&amp;quot;, &amp;quot;Ann&amp;quot;);
+static final ImmutableMap&amp;lt;String, Integer&amp;gt; AGES = ImmutableMap.of(&amp;quot;Ed&amp;quot;, 35, &amp;quot;Ann&amp;quot;, 32);
+static final Joiner COMMA_JOINER = Joiner.on(&#39;,&#39;); // Joiner là kiểu bất biến (immutable)
+static final SomeMutableType[] EMPTY_ARRAY = {};
+enum SomeEnum { ENUM_CONSTANT }
+
+// Không phải là hằng số
+static String nonFinal = &amp;quot;non-final&amp;quot;;
+final String nonStatic = &amp;quot;non-static&amp;quot;;
+static final Set&amp;lt;String&amp;gt; mutableCollection = new HashSet&amp;lt;String&amp;gt;();
+static final ImmutableSet&amp;lt;SomeMutableType&amp;gt; mutableElements = ImmutableSet.of(mutable);
+static final ImmutableMap&amp;lt;String, SomeMutableType&amp;gt; mutableValues =
+    ImmutableMap.of(&amp;quot;Ed&amp;quot;, mutableInstance, &amp;quot;Ann&amp;quot;, mutableInstance2);
+static final Logger logger = Logger.getLogger(MyClass.getName());
+static final String[] nonEmptyArray = {&amp;quot;these&amp;quot;, &amp;quot;can&amp;quot;, &amp;quot;change&amp;quot;};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;525-tên-trường&#34;&gt;5.2.5 Tên trường&lt;/h3&gt;
+&lt;p&gt;Các tên của trường non-constant được viết theo chuẩn lowerCamelCase
+Các tên này thường là danh từ, cụm danh từ. Ví dụ: &lt;code&gt;computedValue&lt;/code&gt;, &lt;code&gt;index&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;private int computedValue;
+private static long index;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;526-tên-tham-số&#34;&gt;5.2.6 Tên tham số&lt;/h3&gt;
+&lt;p&gt;Tên tham số viết theo định dạng lowerCamelCase.
+Tránh đặt tên tham số 1 ký tự trong phương thức public.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public boolean isPrimeNumber(long n) {
+	// vi phạm quy tắc đặt tên tham số 1 kí tự
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;527-tên-biến-cục-bộ&#34;&gt;5.2.7 Tên biến cục bộ&lt;/h3&gt;
+&lt;p&gt;Tên biến cục bộ viết theo chuẩn lowerCamelCase.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public boolean isPrimeNumber(long number) {
+	var checkPrimeNumber = true;
+	// ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Các biến cục bộ không được xem là hằng số nên không được viết theo định dạng Constant.&lt;/p&gt;
+&lt;h3 id=&#34;528-tên-biến-tham-chiếu&#34;&gt;5.2.8 Tên biến tham chiếu&lt;/h3&gt;
+&lt;p&gt;Được đặt tên theo một trong 2 cách sau:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Một chữ cái viết hoa, thường theo sau bởi chữ số (&lt;code&gt;E&lt;/code&gt;, &lt;code&gt;T&lt;/code&gt;, &lt;code&gt;X&lt;/code&gt;, &lt;code&gt;T2&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Một tên viết theo quy tắc cho Class và theo sau là chữ cái viết hoa (&lt;code&gt;RequestT&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;53-chuẩn-camel-định-nghĩa&#34;&gt;5.3 Chuẩn Camel: định nghĩa&lt;/h2&gt;
+&lt;p&gt;Có nhiều cách để chuyển một cụm từ tiếng anh thành định dạng &lt;strong&gt;Camel&lt;/strong&gt;, vài ví dụ điển hình như IPv6, iOS. Để cải thiện khả năng dự đoán, Google Style đưa ra cách xác định như sau:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Chuyển cụm từ thành ký tự ASCII thuần tuý, lại bỏ các dấy nháy. Ví dụ &amp;ldquo;Müller&amp;rsquo;s algorithm&amp;rdquo; trở thành &amp;ldquo;Muellers algorithm&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Chia nó thành các từ, loại bỏ khoảng thắng và dấu câu, thường là dấu gạch ngang.&lt;/li&gt;
+&lt;li&gt;Viết thường mọi từ, sau đó viết hoa ký tự đầu tiền của:
+&lt;ul&gt;
+&lt;li&gt;Tất cả các từ để được định dạnh UpperCamelCase.&lt;/li&gt;
+&lt;li&gt;Tất cả các từ ngoại trừ từ đầu tiên để được lowerCamelCase.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Prose form&lt;/th&gt;
+&lt;th&gt;Correct&lt;/th&gt;
+&lt;th&gt;Incorrect&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;ldquo;XML HTTP request&amp;rdquo;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;XmlHttpRequest&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;XMLHTTPRequest&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;ldquo;new customer ID&amp;rdquo;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;newCustomerId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;newCustomerID&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;ldquo;inner stopwatch&amp;rdquo;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;innerStopwatch&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;innerStopWatch&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;ldquo;supports IPv6 on iOS?&amp;rdquo;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;supportsIpv6OnIos&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;supportsIPv6OnIOS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;6-thực-hành-lập-trình&#34;&gt;6 Thực hành lập trình&lt;/h1&gt;
+&lt;h2 id=&#34;61-override-luôn-được-dùng&#34;&gt;6.1 @Override: luôn được dùng&lt;/h2&gt;
+&lt;p&gt;Một phương thức được đánh dấu với &lt;code&gt;@Override&lt;/code&gt; bất cứ khi nào nó hợp lệ. Bao gồm phương thức ghi đè class cha, phương thức implement từ interface. Ví dụ phương thức &lt;code&gt;String toString()&lt;/code&gt; từ Object:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Override
+public String toString() {
+	return &amp;quot;Luôn đánh dấu @Override khi ghi đè hoặc implement phương thức&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;62-bắt-ngoại-lệ-không-được-bỏ-qua&#34;&gt;6.2 Bắt ngoại lệ: không được bỏ qua&lt;/h2&gt;
+&lt;p&gt;Bạn đọc tham khảo &lt;a href=&#34;https://google.github.io/styleguide/javaguide.html#s6.2-caught-exceptions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tại đây&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;63-các-thành-phân-static-tham-chiếu-theo-class&#34;&gt;6.3 Các thành phân static: tham chiếu theo class&lt;/h2&gt;
+&lt;p&gt;Khi một tham chiếu đến một thành phần static, tham chiếu theo class của nó, không tham chiếu theo instance của class (object).
+Ta có class Car, có trường &lt;code&gt;static numberOfCar&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;class Car {
+	private String name;
+	private int yearPublish;
+	private static int numberOfCar;
+}
+	Car (String name, int year) {
+		this.name = name;
+		this.yearPublish = year;
+		numberOfCar++;
+	}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Car newCar = ...;
+Car.numberOfcar; // Cách này hợp lý
+newCar.numberOfcar; // Không hợp lý dù dùng được
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;7-javadoc&#34;&gt;7 Javadoc&lt;/h1&gt;
+&lt;h2 id=&#34;71-định-dạng&#34;&gt;7.1 Định dạng&lt;/h2&gt;
+&lt;h3 id=&#34;711-mẫu-chung&#34;&gt;7.1.1 Mẫu chung&lt;/h3&gt;
+&lt;p&gt;Định dạng cơ bản của khối Javadoc thường dùng như ví dụ sau:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;/**
+ * Multiple lines of Javadoc text are written here,
+ * wrapped normally...
+ */
+public int method(String p1) { ... }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hoặc theo kiểu một dòng:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;/** An especially short bit of Javadoc. */
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Mẫu cơ bản luôn được chấp nhận. Mẫu một dòng sẽ thay thế khi khối Javadoc vừa đúng một dòng, ngoại trừ có thêm tag &lt;code&gt;@return&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;712-đoạn-văn&#34;&gt;7.1.2 Đoạn văn&lt;/h3&gt;
+&lt;p&gt;Một dòng trống, nghĩa là dòng chỉ chứa dấu hoa thị &lt;code&gt;*&lt;/code&gt; ở đầu dòng - được dùng giữa các đoạn văn. Mỗi đoạn bắt đầu bằng thẻ &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;713-block-tags&#34;&gt;7.1.3 Block tags&lt;/h3&gt;
+&lt;p&gt;Thứ tự xuất hiện &lt;code&gt;@param&lt;/code&gt;, &lt;code&gt;@return&lt;/code&gt;, &lt;code&gt;@throws&lt;/code&gt;, &lt;code&gt;@deprecated&lt;/code&gt; và không để trống phần mô tả.&lt;/p&gt;
+&lt;h2 id=&#34;72-đoạn-tóm-tắt&#34;&gt;7.2 Đoạn tóm tắt&lt;/h2&gt;
+&lt;p&gt;Mỗi Javadoc được bắt đầu bằng đoạn tóm tắt. Đoạn này rất quan trọng, nó là phần duy nhất xuất hiện tại các class, method.&lt;/p&gt;
+&lt;h2 id=&#34;73-javadoc-được-sử-dụng-ở-đâu&#34;&gt;7.3 Javadoc được sử dụng ở đâu&lt;/h2&gt;
+&lt;p&gt;Nó xuất hiện tại các public class, các thành phần của khác của class, với một vài ngoại lệ dưới đầy.&lt;/p&gt;
+&lt;h2 id=&#34;731-ngoài-trừ-các-method-đơn-giản&#34;&gt;7.3.1 Ngoài trừ: các method đơn giản&lt;/h2&gt;
+&lt;p&gt;Javadoc tuỳ ý cho các loại phương thức đơn giản như getter, setter.&lt;/p&gt;
+&lt;h3 id=&#34;732-ngoại-trừ-overides&#34;&gt;7.3.2 Ngoại trừ: overides&lt;/h3&gt;
+&lt;p&gt;Không cần thiết cho các method ghi đè từ class cha hay interface.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hướng dẫn lập trình Java theo tiêu chuẩn Google - Phần 1</title>
       <link>https://truongvantuan.github.io/post/java-style-guide-part1/</link>
       <pubDate>Fri, 19 Mar 2021 13:08:08 +0700</pubDate>
       <guid>https://truongvantuan.github.io/post/java-style-guide-part1/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;Bài viết gốc: &lt;a href=&#34;https://google.github.io/styleguide/javaguide.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Java Style Guide&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Việc định dạng cấu trúc code giờ đây có thể được hoành thành bởi tính năng format document có sẵn trong các editor, IDE. Tuy nhiên việc nắm vững các quy chuẩn viết code, ở đây là chuẩn Google giúp nâng cao kỹ năng lập trình của bạn lên một cấp độ mới. Cách thức trình bày code tốt cho thấy sự chuyên nghiệp,&lt;/p&gt;
+&lt;p&gt;Bài viết gốc: &lt;a href=&#34;https://google.github.io/styleguide/javaguide.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Java Style Guide&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Việc định dạng cấu trúc code giờ đây có thể được hoành thành bởi tính năng &amp;ldquo;format document&amp;rdquo; có sẵn trong các Editor, IDE. Tuy nhiên việc nắm vững các quy chuẩn viết code, ở đây là chuẩn Google Java giúp nâng cao kỹ năng lập trình của bạn lên một cấp độ mới. Cách thức trình bày code tốt cho thấy sự chuyên của lập trình viên, nó cũng gây ấn tượng tốt với nhà tuyển dụng.&lt;/p&gt;
+&lt;p&gt;Trong quá trình dịch sẽ không tránh khỏi sai sót, vì vậy rất mong các bạn tiếp cận bài viết gốc được dẫn link ở trên để có được nội dung chính xác nhất. Nếu trong quá trình tìm hiểu, nếu có phần nội dung nào bạn đã sử dụng thành thục, bạn nên bỏ qua vì nó đã chuyển thành kỹ năng của bạn rồi.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&#34;1-giới-thiệu&#34;&gt;1. Giới thiệu&lt;/h1&gt;
 &lt;p&gt;Tài liệu này đóng vai trò là định nghĩa hoàn chỉnh &amp;ldquo;tiêu chuẩn viết code Google&amp;rdquo; đối với ngôn ngữ lập trình Java. Tệp mã nguồn được gọi là &amp;ldquo;Google Style&amp;rdquo; nếu nó tuần thủ các quy tắc sau đây.&lt;/p&gt;
@@ -366,6 +549,9 @@ public String getNameIfPresent() { ... }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;4.8.8 Numeric liter&lt;/p&gt;
 &lt;p&gt;các giá trị số nguyên lớn (&lt;code&gt;long&lt;/code&gt;) được sử dụng hậu tố &lt;code&gt;L&lt;/code&gt; (&lt;code&gt;3000000000L&lt;/code&gt;), không bảo giờ viết thường (&lt;code&gt;3000000000l&lt;/code&gt;) để tránh nhầm lẫn với số 1.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Phần 2: &lt;a href=&#34;https://truongvantuan.github.io/post/java-style-guide-part2/&#34;&gt;Hướng dẫn lập trình Java theo tiêu chuẩn Google - Phần 1&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     

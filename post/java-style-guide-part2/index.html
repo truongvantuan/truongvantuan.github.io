@@ -1,0 +1,1509 @@
+<!DOCTYPE html><html lang="vi-vn" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.2.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Trương Văn Tuấn" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Bài viết gốc: Google Java Style Guide
+Phần 1: Hướng dẫn lập trình Java theo tiêu chuẩn Google - Phần 1
+  Việc định dạng cấu trúc code giờ đây có thể được hoành thành bởi tính năng &ldquo;format document&rdquo; có sẵn trong các Editor, IDE." />
+
+  
+  <link rel="alternate" hreflang="vi-vn" href="https://truongvantuan.github.io/post/java-style-guide-part2/" />
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/atom-one-light.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/atom-one-light.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.e6f7b650e2d80724e28cce23c674926c.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu3ca13aa75a58dd23742bac0bd9a006b0_16703_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu3ca13aa75a58dd23742bac0bd9a006b0_16703_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://truongvantuan.github.io/post/java-style-guide-part2/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@https://twitter.com/truongvantuanbk" />
+    <meta property="twitter:creator" content="@https://twitter.com/truongvantuanbk" />
+  
+  <meta property="og:site_name" content="Trương Tuấn" />
+  <meta property="og:url" content="https://truongvantuan.github.io/post/java-style-guide-part2/" />
+  <meta property="og:title" content="Hướng dẫn lập trình Java theo tiêu chuẩn Google - Phần 2 | Trương Tuấn" />
+  <meta property="og:description" content="Bài viết gốc: Google Java Style Guide
+Phần 1: Hướng dẫn lập trình Java theo tiêu chuẩn Google - Phần 1
+  Việc định dạng cấu trúc code giờ đây có thể được hoành thành bởi tính năng &ldquo;format document&rdquo; có sẵn trong các Editor, IDE." /><meta property="og:image" content="https://truongvantuan.github.io/post/java-style-guide-part2/featured.png" />
+    <meta property="twitter:image" content="https://truongvantuan.github.io/post/java-style-guide-part2/featured.png" /><meta property="og:locale" content="vi-vn" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-06-27T17:10:04&#43;07:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-06-27T17:10:04&#43;07:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://truongvantuan.github.io/post/java-style-guide-part2/"
+  },
+  "headline": "Hướng dẫn lập trình Java theo tiêu chuẩn Google - Phần 2",
+  
+  "image": [
+    "https://truongvantuan.github.io/post/java-style-guide-part2/featured.png"
+  ],
+  
+  "datePublished": "2021-06-27T17:10:04+07:00",
+  "dateModified": "2021-06-27T17:10:04+07:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Trương Văn Tuấn"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Trương Tuấn",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://truongvantuan.github.io/media/icon_hu3ca13aa75a58dd23742bac0bd9a006b0_16703_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Bài viết gốc: Google Java Style Guide\nPhần 1: Hướng dẫn lập trình Java theo tiêu chuẩn Google - Phần 1\n  Việc định dạng cấu trúc code giờ đây có thể được hoành thành bởi tính năng \u0026ldquo;format document\u0026rdquo; có sẵn trong các Editor, IDE."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Hướng dẫn lập trình Java theo tiêu chuẩn Google - Phần 2 | Trương Tuấn</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="a4455ab5331b9f4fb2ae41008c88ca83" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.b8153d4570dcbb34350a2a846dba8c03.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Tìm kiếm</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Từ khóa..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Từ khóa...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Trương Tuấn</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Chuyển Điều Hướng">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Trương Tuấn</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Giới thiệu</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#skills"><span>Kỹ năng</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#accomplishments"><span>Chứng chỉ</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>Kinh nghiệm</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Dự án</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Bài viết</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/linux/"><span>Linux</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Liên hệ</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Tìm kiếm"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Thiết lập hiển thị">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>Hướng dẫn lập trình Java theo tiêu chuẩn Google - Phần 2</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jun 27, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 phút để đọc
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 405px;">
+  <div style="position: relative">
+    <img src="/post/java-style-guide-part2/featured_hu51437e671f901d40c366b21d7c0e3f81_18542_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <blockquote>
+<p>Bài viết gốc: <a href="https://google.github.io/styleguide/javaguide.html" target="_blank" rel="noopener">Google Java Style Guide</a></p>
+<p>Phần 1: <a href="/post/java-style-guide-part1/">Hướng dẫn lập trình Java theo tiêu chuẩn Google - Phần 1</a></p>
+</blockquote>
+<blockquote>
+<p>Việc định dạng cấu trúc code giờ đây có thể được hoành thành bởi tính năng &ldquo;format document&rdquo; có sẵn trong các Editor, IDE. Tuy nhiên việc nắm vững các quy chuẩn viết code, ở đây là chuẩn Google Java giúp nâng cao kỹ năng lập trình của bạn lên một cấp độ mới. Cách thức trình bày code tốt cho thấy sự chuyên của lập trình viên, nó cũng gây ấn tượng tốt với nhà tuyển dụng.</p>
+<p>Trong quá trình dịch sẽ không tránh khỏi sai sót, vì vậy rất mong các bạn tiếp cận bài viết gốc được dẫn link ở trên để có được nội dung chính xác nhất. Nếu trong quá trình tìm hiểu, nếu có phần nội dung nào bạn đã sử dụng thành thục, bạn nên bỏ qua vì nó đã chuyển thành kỹ năng của bạn rồi.</p>
+</blockquote>
+<h1 id="5-đặt-tên">5 Đặt tên</h1>
+<h2 id="51-quy-tắc-định-danh-chung">5.1 Quy tắc định danh chung</h2>
+<p>Định danh chỉ sử dụng số và chữ cái ASCII, một vài trường hợp sử dụng thêm dấu gạch dưới. Nó tương đương với biểu thức chính quy <code>\w+</code>
+Trong Google Style các tiền tố hậu tố đặc biệt không được sử dụng. Ví dụ như các tên sau không tuân thủ Google Style: <code>name_</code>, <code>mName</code>, <code>s_name</code> and <code>kName</code></p>
+<h2 id="52-quy-tắc-theo-loại-định-danh">5.2 Quy tắc theo loại định danh</h2>
+<h3 id="521-tên-package">5.2.1 Tên package</h3>
+<p>Tên package đều là chữ viết thường, với các từ được nối liên tục nhau (không chèn dấu gạch dưới).
+Ví dụ: <code>com.example.deepspace</code> không được <code>com.example.deepSpace</code>, <code>com.example.deep_space</code>.</p>
+<h3 id="522-tên-class">5.2.2 Tên class</h3>
+<p>Tên class được viết theo chuẩn <a href="https://google.github.io/styleguide/javaguide.html#s5.3-camel-case" target="_blank" rel="noopener">UpperCamelCase</a>
+Tên class thường là danh từ hoặc cụm danh từ. Ví dụ: <code>Character</code> or <code>ImmutableList</code>
+Tên interface cũng có thể là danh từ hoặc cụm danh từ (ví dụ <code>List</code>). Nhưng đôi khi là tính từ hoặc cụm tính từ (ví dụ <code>Readable</code>)
+Không có quy tắc hay quy ước cụ thể để đặt tên đúng chuẩn cho dấu Annotation.
+Các test class được đặt tên bắt đầu bằng tên của class chúng test và kết thúc bởi Test. Ví dụ: <code>HashTest</code>, <code>HashIntegrationTest</code>.</p>
+<h3 id="523-tên-method">5.2.3 Tên method</h3>
+<p>Tên method được viết theo chuẩn <a href="https://google.github.io/styleguide/javaguide.html#s5.3-camel-case" target="_blank" rel="noopener">lowerCamelCase</a>
+Tên method thường là động từ hoặc cụm động từ. Ví dụ: <code>sendMessage</code>, <code>stop</code>.
+Dấu gạch dưới có thể xuất hiện trong tên phương thức JUnit test để tách các phần logic riêng biệt của tên, và mỗi phần được đinh dạng lowerCamelCase. Một mẫu tên điển hình là <code>&lt;methodUnderTest&gt;_&lt;state&gt;</code>, ví dụ <code>pop_emptyStack</code>.</p>
+<h3 id="524-tên-constant">5.2.4 Tên constant</h3>
+<p>CONSTANT_CASE: Tất cả ký tự viết hoa, mỗi từ cách nhau một dấu gạch dưới.
+Hằng số là trường <strong>final static</strong>, có giá trị không thay đổi, các phương thức không có khả năng làm thay đổi giá trị của hằng số. Nó bao gồm các kiểu nguyên thuỷ (primitives), String, các kiểu bất biến (immutable type), và danh sách các kiểu bất biến.</p>
+<p>Ví dụ: Các tên sau thường là danh từ hoặc cụm danh từ.</p>
+<pre><code class="language-java">// Các khai báo hằng số
+static final int NUMBER = 5;
+static final ImmutableList&lt;String&gt; NAMES = ImmutableList.of(&quot;Ed&quot;, &quot;Ann&quot;);
+static final ImmutableMap&lt;String, Integer&gt; AGES = ImmutableMap.of(&quot;Ed&quot;, 35, &quot;Ann&quot;, 32);
+static final Joiner COMMA_JOINER = Joiner.on(','); // Joiner là kiểu bất biến (immutable)
+static final SomeMutableType[] EMPTY_ARRAY = {};
+enum SomeEnum { ENUM_CONSTANT }
+
+// Không phải là hằng số
+static String nonFinal = &quot;non-final&quot;;
+final String nonStatic = &quot;non-static&quot;;
+static final Set&lt;String&gt; mutableCollection = new HashSet&lt;String&gt;();
+static final ImmutableSet&lt;SomeMutableType&gt; mutableElements = ImmutableSet.of(mutable);
+static final ImmutableMap&lt;String, SomeMutableType&gt; mutableValues =
+    ImmutableMap.of(&quot;Ed&quot;, mutableInstance, &quot;Ann&quot;, mutableInstance2);
+static final Logger logger = Logger.getLogger(MyClass.getName());
+static final String[] nonEmptyArray = {&quot;these&quot;, &quot;can&quot;, &quot;change&quot;};
+</code></pre>
+<h3 id="525-tên-trường">5.2.5 Tên trường</h3>
+<p>Các tên của trường non-constant được viết theo chuẩn lowerCamelCase
+Các tên này thường là danh từ, cụm danh từ. Ví dụ: <code>computedValue</code>, <code>index</code>.</p>
+<pre><code class="language-java">private int computedValue;
+private static long index;
+</code></pre>
+<h3 id="526-tên-tham-số">5.2.6 Tên tham số</h3>
+<p>Tên tham số viết theo định dạng lowerCamelCase.
+Tránh đặt tên tham số 1 ký tự trong phương thức public.</p>
+<pre><code class="language-java">public boolean isPrimeNumber(long n) {
+	// vi phạm quy tắc đặt tên tham số 1 kí tự
+}
+</code></pre>
+<h3 id="527-tên-biến-cục-bộ">5.2.7 Tên biến cục bộ</h3>
+<p>Tên biến cục bộ viết theo chuẩn lowerCamelCase.</p>
+<pre><code class="language-java">public boolean isPrimeNumber(long number) {
+	var checkPrimeNumber = true;
+	// ...
+}
+</code></pre>
+<p>Các biến cục bộ không được xem là hằng số nên không được viết theo định dạng Constant.</p>
+<h3 id="528-tên-biến-tham-chiếu">5.2.8 Tên biến tham chiếu</h3>
+<p>Được đặt tên theo một trong 2 cách sau:</p>
+<ul>
+<li>Một chữ cái viết hoa, thường theo sau bởi chữ số (<code>E</code>, <code>T</code>, <code>X</code>, <code>T2</code>).</li>
+<li>Một tên viết theo quy tắc cho Class và theo sau là chữ cái viết hoa (<code>RequestT</code>).</li>
+</ul>
+<h2 id="53-chuẩn-camel-định-nghĩa">5.3 Chuẩn Camel: định nghĩa</h2>
+<p>Có nhiều cách để chuyển một cụm từ tiếng anh thành định dạng <strong>Camel</strong>, vài ví dụ điển hình như IPv6, iOS. Để cải thiện khả năng dự đoán, Google Style đưa ra cách xác định như sau:</p>
+<ol>
+<li>Chuyển cụm từ thành ký tự ASCII thuần tuý, lại bỏ các dấy nháy. Ví dụ &ldquo;Müller&rsquo;s algorithm&rdquo; trở thành &ldquo;Muellers algorithm&rdquo;.</li>
+<li>Chia nó thành các từ, loại bỏ khoảng thắng và dấu câu, thường là dấu gạch ngang.</li>
+<li>Viết thường mọi từ, sau đó viết hoa ký tự đầu tiền của:
+<ul>
+<li>Tất cả các từ để được định dạnh UpperCamelCase.</li>
+<li>Tất cả các từ ngoại trừ từ đầu tiên để được lowerCamelCase.</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Prose form</th>
+<th>Correct</th>
+<th>Incorrect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&ldquo;XML HTTP request&rdquo;</td>
+<td><code>XmlHttpRequest</code></td>
+<td>XMLHTTPRequest</td>
+</tr>
+<tr>
+<td>&ldquo;new customer ID&rdquo;</td>
+<td><code>newCustomerId</code></td>
+<td>newCustomerID</td>
+</tr>
+<tr>
+<td>&ldquo;inner stopwatch&rdquo;</td>
+<td><code>innerStopwatch</code></td>
+<td>innerStopWatch</td>
+</tr>
+<tr>
+<td>&ldquo;supports IPv6 on iOS?&rdquo;</td>
+<td><code>supportsIpv6OnIos</code></td>
+<td>supportsIPv6OnIOS</td>
+</tr>
+</tbody>
+</table>
+<h1 id="6-thực-hành-lập-trình">6 Thực hành lập trình</h1>
+<h2 id="61-override-luôn-được-dùng">6.1 @Override: luôn được dùng</h2>
+<p>Một phương thức được đánh dấu với <code>@Override</code> bất cứ khi nào nó hợp lệ. Bao gồm phương thức ghi đè class cha, phương thức implement từ interface. Ví dụ phương thức <code>String toString()</code> từ Object:</p>
+<pre><code class="language-java">@Override
+public String toString() {
+	return &quot;Luôn đánh dấu @Override khi ghi đè hoặc implement phương thức&quot;
+}
+</code></pre>
+<h2 id="62-bắt-ngoại-lệ-không-được-bỏ-qua">6.2 Bắt ngoại lệ: không được bỏ qua</h2>
+<p>Bạn đọc tham khảo <a href="https://google.github.io/styleguide/javaguide.html#s6.2-caught-exceptions" target="_blank" rel="noopener">tại đây</a></p>
+<h2 id="63-các-thành-phân-static-tham-chiếu-theo-class">6.3 Các thành phân static: tham chiếu theo class</h2>
+<p>Khi một tham chiếu đến một thành phần static, tham chiếu theo class của nó, không tham chiếu theo instance của class (object).
+Ta có class Car, có trường <code>static numberOfCar</code>:</p>
+<pre><code class="language-java">class Car {
+	private String name;
+	private int yearPublish;
+	private static int numberOfCar;
+}
+	Car (String name, int year) {
+		this.name = name;
+		this.yearPublish = year;
+		numberOfCar++;
+	}
+</code></pre>
+<pre><code class="language-java">Car newCar = ...;
+Car.numberOfcar; // Cách này hợp lý
+newCar.numberOfcar; // Không hợp lý dù dùng được
+</code></pre>
+<h1 id="7-javadoc">7 Javadoc</h1>
+<h2 id="71-định-dạng">7.1 Định dạng</h2>
+<h3 id="711-mẫu-chung">7.1.1 Mẫu chung</h3>
+<p>Định dạng cơ bản của khối Javadoc thường dùng như ví dụ sau:</p>
+<pre><code class="language-java">/**
+ * Multiple lines of Javadoc text are written here,
+ * wrapped normally...
+ */
+public int method(String p1) { ... }
+</code></pre>
+<p>Hoặc theo kiểu một dòng:</p>
+<pre><code class="language-java">/** An especially short bit of Javadoc. */
+</code></pre>
+<p>Mẫu cơ bản luôn được chấp nhận. Mẫu một dòng sẽ thay thế khi khối Javadoc vừa đúng một dòng, ngoại trừ có thêm tag <code>@return</code>.</p>
+<h3 id="712-đoạn-văn">7.1.2 Đoạn văn</h3>
+<p>Một dòng trống, nghĩa là dòng chỉ chứa dấu hoa thị <code>*</code> ở đầu dòng - được dùng giữa các đoạn văn. Mỗi đoạn bắt đầu bằng thẻ <code>&lt;p&gt;</code>.</p>
+<h3 id="713-block-tags">7.1.3 Block tags</h3>
+<p>Thứ tự xuất hiện <code>@param</code>, <code>@return</code>, <code>@throws</code>, <code>@deprecated</code> và không để trống phần mô tả.</p>
+<h2 id="72-đoạn-tóm-tắt">7.2 Đoạn tóm tắt</h2>
+<p>Mỗi Javadoc được bắt đầu bằng đoạn tóm tắt. Đoạn này rất quan trọng, nó là phần duy nhất xuất hiện tại các class, method.</p>
+<h2 id="73-javadoc-được-sử-dụng-ở-đâu">7.3 Javadoc được sử dụng ở đâu</h2>
+<p>Nó xuất hiện tại các public class, các thành phần của khác của class, với một vài ngoại lệ dưới đầy.</p>
+<h2 id="731-ngoài-trừ-các-method-đơn-giản">7.3.1 Ngoài trừ: các method đơn giản</h2>
+<p>Javadoc tuỳ ý cho các loại phương thức đơn giản như getter, setter.</p>
+<h3 id="732-ngoại-trừ-overides">7.3.2 Ngoại trừ: overides</h3>
+<p>Không cần thiết cho các method ghi đè từ class cha hay interface.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/java/">java</a>
+  
+  <a class="badge badge-light" href="/tag/cleancode/">cleancode</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://truongvantuan.github.io/post/java-style-guide-part2/&amp;text=H%c6%b0%e1%bb%9bng%20d%e1%ba%abn%20l%e1%ba%adp%20tr%c3%acnh%20Java%20theo%20ti%c3%aau%20chu%e1%ba%a9n%20Google%20-%20Ph%e1%ba%a7n%202" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://truongvantuan.github.io/post/java-style-guide-part2/&amp;t=H%c6%b0%e1%bb%9bng%20d%e1%ba%abn%20l%e1%ba%adp%20tr%c3%acnh%20Java%20theo%20ti%c3%aau%20chu%e1%ba%a9n%20Google%20-%20Ph%e1%ba%a7n%202" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=H%c6%b0%e1%bb%9bng%20d%e1%ba%abn%20l%e1%ba%adp%20tr%c3%acnh%20Java%20theo%20ti%c3%aau%20chu%e1%ba%a9n%20Google%20-%20Ph%e1%ba%a7n%202&amp;body=https://truongvantuan.github.io/post/java-style-guide-part2/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://truongvantuan.github.io/post/java-style-guide-part2/&amp;title=H%c6%b0%e1%bb%9bng%20d%e1%ba%abn%20l%e1%ba%adp%20tr%c3%acnh%20Java%20theo%20ti%c3%aau%20chu%e1%ba%a9n%20Google%20-%20Ph%e1%ba%a7n%202" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://reddit.com/submit?url=https://truongvantuan.github.io/post/java-style-guide-part2/&amp;title=H%c6%b0%e1%bb%9bng%20d%e1%ba%abn%20l%e1%ba%adp%20tr%c3%acnh%20Java%20theo%20ti%c3%aau%20chu%e1%ba%a9n%20Google%20-%20Ph%e1%ba%a7n%202" target="_blank" rel="noopener" class="share-btn-reddit">
+          <i class="fab fa-reddit-alien"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://truongvantuan.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hub0a1e9522a4d07747dfd7aa3fe185e02_516061_270x270_fill_lanczos_center_2.png" alt="Trương Văn Tuấn"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://truongvantuan.github.io/">Trương Văn Tuấn</a></h5>
+      <h6 class="card-subtitle">Java Web Developer</h6>
+      <p class="card-text">Lập trình viên Java Web, yêu thích Linux và các dự án mã nguồn mở.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-address-book"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/truongvantuan" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/media/my-resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/truongvantuanbk" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/tuantruongvan/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Bài Liên Quan</h3>
+    <ul>
+      
+      <li><a href="/post/java-style-guide-part1/">Hướng dẫn lập trình Java theo tiêu chuẩn Google - Phần 1</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+  <p class="powered-by">
+    © 2021 TRUONG TUAN
+  </p>
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Trích Dẫn</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Sao Chép
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Tải Về
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/java.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/vi/js/wowchemy.min.6c4ee7d6200fe37d8442d206ac102013.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>
