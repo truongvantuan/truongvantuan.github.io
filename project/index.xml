@@ -5,7 +5,7 @@
     <link>https://truongvantuan.github.io/project/</link>
       <atom:link href="https://truongvantuan.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>vi-vn</language><copyright>© 2021 TRUONG TUAN</copyright><lastBuildDate>Tue, 30 Mar 2021 18:02:29 +0700</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>vi-vn</language><copyright>© 2021 TRUONG TUAN</copyright><lastBuildDate>Wed, 14 Jul 2021 09:56:44 +0700</lastBuildDate>
     <image>
       <url>https://truongvantuan.github.io/media/icon_hu3ca13aa75a58dd23742bac0bd9a006b0_16703_512x512_fill_lanczos_center_2.png</url>
       <title>Projects</title>
@@ -13,34 +13,39 @@
     </image>
     
     <item>
-      <title>Java Programing II Submit</title>
-      <link>https://truongvantuan.github.io/project/java-programing-ii-submit/</link>
-      <pubDate>Tue, 30 Mar 2021 18:02:29 +0700</pubDate>
-      <guid>https://truongvantuan.github.io/project/java-programing-ii-submit/</guid>
-      <description>&lt;p&gt;My submit | Java Programming 2 - from java-programming.mooc.fi&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Java Programming là khóa học online khá nổi tiếng từ trường University of Helsinki (bác Linus Torvalds tốt nghiệp trường này), khóa học được cộng đồng người học Java trên Reddit đánh giá cao.&lt;/li&gt;
-&lt;li&gt;Trong khóa học này, bạn sẽ học những kiến ​​thức cơ bản về lập trình máy tính, cùng với các thuật toán và lập trình hướng đối tượng thông qua ngôn ngữ lập trình Java. Khóa học bao gồm các tài liệu toàn diện và nhiều bài tập lập trình - tất cả đều được kiểm tra bằng dịch vụ kiểm tra tự động, viết bằng jUnit rất chi tiết.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <title>Employees Management</title>
+      <link>https://truongvantuan.github.io/project/employees-management/</link>
+      <pubDate>Wed, 14 Jul 2021 09:56:44 +0700</pubDate>
+      <guid>https://truongvantuan.github.io/project/employees-management/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Java Programing I Submit</title>
-      <link>https://truongvantuan.github.io/project/java-programing-i-submit/</link>
+      <title>Java Programing Submit I &#43; II</title>
+      <link>https://truongvantuan.github.io/project/java-programing-submit/</link>
       <pubDate>Tue, 30 Mar 2021 17:53:44 +0700</pubDate>
-      <guid>https://truongvantuan.github.io/project/java-programing-i-submit/</guid>
+      <guid>https://truongvantuan.github.io/project/java-programing-submit/</guid>
       <description>&lt;h1 id=&#34;java-programming-mooc-submit&#34;&gt;java-programming-mooc-submit&lt;/h1&gt;
-&lt;p&gt;My submit | Java Programming 1 - from java-programming.mooc.fi&lt;/p&gt;
+&lt;p&gt;My submit | Java Programming I + II - from java-programming.mooc.fi&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Java Programming là khóa học online khá nổi tiếng từ trường University of Helsinki (bác Linus Torvalds tốt nghiệp trường này), khóa học được cộng đồng người học Java trên Reddit đánh giá cao.&lt;/li&gt;
 &lt;li&gt;Trong khóa học này, bạn sẽ học những kiến ​​thức cơ bản về lập trình máy tính, cùng với các thuật toán và lập trình hướng đối tượng thông qua ngôn ngữ lập trình Java. Khóa học bao gồm các tài liệu toàn diện và nhiều bài tập lập trình - tất cả đều được kiểm tra bằng dịch vụ kiểm tra tự động, viết bằng jUnit rất chi tiết.&lt;/li&gt;
+&lt;li&gt;Chứng chỉ hoàn thành Java Programming I:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://certificates.mooc.fi/validate/gbg279lhnds&#34;&gt;https://certificates.mooc.fi/validate/gbg279lhnds&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Chứng chỉ hoàn thành Java Programming II:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://certificates.mooc.fi/validate/tfjzxnfu47t&#34;&gt;https://certificates.mooc.fi/validate/tfjzxnfu47t&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
     
     <item>
-      <title>ATM Banking Javacore</title>
+      <title>ATM Banking JavaCore</title>
       <link>https://truongvantuan.github.io/project/atm-banking-javacore/</link>
       <pubDate>Tue, 30 Mar 2021 17:11:50 +0700</pubDate>
       <guid>https://truongvantuan.github.io/project/atm-banking-javacore/</guid>
