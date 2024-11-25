@@ -20,16 +20,16 @@ sections:
       is_education_first: false
   - block: resume-skills
     content:
-      title: Skills & Hobbies
+      title: Kỹ năng & Công nghệ
       username: admin
     design:
       show_skill_percentage: false
-  - block: resume-awards
-    content:
-      title: Awards
-      username: admin
+#  - block: resume-awards
+#    content:
+#      title: Awards
+#      username: admin
   - block: resume-languages
     content:
-      title: Languages
+      title: Ngoại ngữ
       username: admin
 ---

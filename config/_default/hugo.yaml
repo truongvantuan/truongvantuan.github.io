@@ -4,15 +4,15 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 # Website name
-title: Hugo Academic CV Theme
+title: Truong Van Tuan
 # Website URL
-baseURL: 'https://example.com/'
+baseURL: 'https://truongvantuan.github.io/'
 
 ############################
 ## LANGUAGE
 ############################
 
-defaultContentLanguage: en
+defaultContentLanguage: vi
 hasCJKLanguage: false
 defaultContentLanguageInSubdir: false
 removePathAccents: true
@@ -38,10 +38,10 @@ outputs:
   home: [HTML, RSS, headers, redirects, backlinks]
   section: [HTML, RSS]
 imaging:
-  resampleFilter: lanczos
+  resampleFilter: Lanczos
   quality: 80
-  anchor: smart
-timeout: 600000
+  anchor: Smart
+timeout: "30s"
 taxonomies:
   author: authors
   tag: tags
